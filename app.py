@@ -854,33 +854,50 @@ def set_background():
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
+                position: relative;
+            }}
+            .stApp::before {{
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.4);
+                z-index: -1;
             }}
             .main-header {{
-                background-color: rgba(0, 0, 0, 0.7);
+                background-color: rgba(0, 0, 0, 0.8);
                 padding: 20px;
                 border-radius: 10px;
                 margin-bottom: 20px;
+                backdrop-filter: blur(10px);
             }}
             .flag-display {{
-                background-color: rgba(255, 255, 255, 0.9);
+                background-color: rgba(255, 255, 255, 0.95);
                 padding: 30px;
                 border-radius: 15px;
                 text-align: center;
                 margin: 20px 0;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(10px);
             }}
             .option-button {{
-                background-color: rgba(255, 255, 255, 0.8);
+                background-color: rgba(255, 255, 255, 0.9);
                 border: 2px solid #ddd;
                 border-radius: 10px;
                 padding: 15px;
                 margin: 10px 0;
                 cursor: pointer;
                 transition: all 0.3s ease;
+                backdrop-filter: blur(5px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             }}
             .option-button:hover {{
-                background-color: rgba(255, 255, 255, 0.9);
+                background-color: rgba(255, 255, 255, 1);
                 border-color: #007bff;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
             }}
             .correct-answer {{
                 background-color: rgba(40, 167, 69, 0.8) !important;
@@ -981,14 +998,21 @@ def main():
             unsafe_allow_html=True
         )
         
-        # Display flag image
+        # Display flag image with white border
         try:
-            st.image(flag_url, width=300, caption="Country Flag")
+            st.markdown(
+                f"""
+                <div style="text-align: center; margin: 20px 0;">
+                    <img src="{flag_url}" style="width: 300px; height: auto; border: 4px solid white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" alt="Country Flag">
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
         except:
             # Fallback to emoji if image fails
             st.markdown(
                 f"""
-                <div style="text-align: center; font-size: 6rem; margin: 20px 0;">
+                <div style="text-align: center; font-size: 6rem; margin: 20px 0; padding: 20px; border: 4px solid white; border-radius: 10px; background-color: rgba(255,255,255,0.1); display: inline-block;">
                     {st.session_state.current_flag}
                 </div>
                 """,
