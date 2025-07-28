@@ -3,6 +3,7 @@ import random
 import base64
 from PIL import Image
 import io
+import requests
 
 # Country data with flags and facts
 COUNTRIES_DATA = {
@@ -793,6 +794,54 @@ def get_background_image():
     except:
         return None
 
+def get_flag_image_url(country_name):
+    """Get flag image URL from flagcdn.com"""
+    # Convert country name to ISO code (simplified mapping)
+    country_codes = {
+        "Afghanistan": "af", "Albania": "al", "Algeria": "dz", "Andorra": "ad", "Angola": "ao",
+        "Antigua and Barbuda": "ag", "Argentina": "ar", "Armenia": "am", "Australia": "au", "Austria": "at",
+        "Azerbaijan": "az", "Bahamas": "bs", "Bahrain": "bh", "Bangladesh": "bd", "Barbados": "bb",
+        "Belarus": "by", "Belgium": "be", "Belize": "bz", "Benin": "bj", "Bhutan": "bt",
+        "Bolivia": "bo", "Bosnia and Herzegovina": "ba", "Botswana": "bw", "Brazil": "br", "Brunei": "bn",
+        "Bulgaria": "bg", "Burkina Faso": "bf", "Burundi": "bi", "Cambodia": "kh", "Cameroon": "cm",
+        "Canada": "ca", "Cape Verde": "cv", "Central African Republic": "cf", "Chad": "td", "Chile": "cl",
+        "China": "cn", "Colombia": "co", "Comoros": "km", "Congo": "cg", "Costa Rica": "cr",
+        "Croatia": "hr", "Cuba": "cu", "Cyprus": "cy", "Czech Republic": "cz", "Denmark": "dk",
+        "Djibouti": "dj", "Dominica": "dm", "Dominican Republic": "do", "East Timor": "tl", "Ecuador": "ec",
+        "Egypt": "eg", "El Salvador": "sv", "Equatorial Guinea": "gq", "Eritrea": "er", "Estonia": "ee",
+        "Eswatini": "sz", "Ethiopia": "et", "Fiji": "fj", "Finland": "fi", "France": "fr",
+        "Gabon": "ga", "Gambia": "gm", "Georgia": "ge", "Germany": "de", "Ghana": "gh",
+        "Greece": "gr", "Grenada": "gd", "Guatemala": "gt", "Guinea": "gn", "Guinea-Bissau": "gw",
+        "Guyana": "gy", "Haiti": "ht", "Honduras": "hn", "Hungary": "hu", "Iceland": "is",
+        "India": "in", "Indonesia": "id", "Iran": "ir", "Iraq": "iq", "Ireland": "ie",
+        "Israel": "il", "Italy": "it", "Ivory Coast": "ci", "Jamaica": "jm", "Japan": "jp",
+        "Jordan": "jo", "Kazakhstan": "kz", "Kenya": "ke", "Kiribati": "ki", "Kuwait": "kw",
+        "Kyrgyzstan": "kg", "Laos": "la", "Latvia": "lv", "Lebanon": "lb", "Lesotho": "ls",
+        "Liberia": "lr", "Libya": "ly", "Liechtenstein": "li", "Lithuania": "lt", "Luxembourg": "lu",
+        "Madagascar": "mg", "Malawi": "mw", "Malaysia": "my", "Maldives": "mv", "Mali": "ml",
+        "Malta": "mt", "Marshall Islands": "mh", "Mauritania": "mr", "Mauritius": "mu", "Mexico": "mx",
+        "Micronesia": "fm", "Moldova": "md", "Monaco": "mc", "Mongolia": "mn", "Montenegro": "me",
+        "Morocco": "ma", "Mozambique": "mz", "Myanmar": "mm", "Namibia": "na", "Nauru": "nr",
+        "Nepal": "np", "Netherlands": "nl", "New Zealand": "nz", "Nicaragua": "ni", "Niger": "ne",
+        "Nigeria": "ng", "North Korea": "kp", "North Macedonia": "mk", "Norway": "no", "Oman": "om",
+        "Pakistan": "pk", "Palau": "pw", "Panama": "pa", "Papua New Guinea": "pg", "Paraguay": "py",
+        "Peru": "pe", "Philippines": "ph", "Poland": "pl", "Portugal": "pt", "Qatar": "qa",
+        "Romania": "ro", "Russia": "ru", "Rwanda": "rw", "Saint Kitts and Nevis": "kn", "Saint Lucia": "lc",
+        "Saint Vincent and the Grenadines": "vc", "Samoa": "ws", "San Marino": "sm", "Sao Tome and Principe": "st", "Saudi Arabia": "sa",
+        "Senegal": "sn", "Serbia": "rs", "Seychelles": "sc", "Sierra Leone": "sl", "Singapore": "sg",
+        "Slovakia": "sk", "Slovenia": "si", "Solomon Islands": "sb", "Somalia": "so", "South Africa": "za",
+        "South Korea": "kr", "South Sudan": "ss", "Spain": "es", "Sri Lanka": "lk", "Sudan": "sd",
+        "Suriname": "sr", "Sweden": "se", "Switzerland": "ch", "Syria": "sy", "Taiwan": "tw",
+        "Tajikistan": "tj", "Tanzania": "tz", "Thailand": "th", "Togo": "tg", "Tonga": "to",
+        "Trinidad and Tobago": "tt", "Tunisia": "tn", "Turkey": "tr", "Turkmenistan": "tm", "Tuvalu": "tv",
+        "Uganda": "ug", "Ukraine": "ua", "United Arab Emirates": "ae", "United Kingdom": "gb", "United States": "us",
+        "Uruguay": "uy", "Uzbekistan": "uz", "Vanuatu": "vu", "Vatican City": "va", "Venezuela": "ve",
+        "Vietnam": "vn", "Yemen": "ye", "Zambia": "zm", "Zimbabwe": "zw"
+    }
+    
+    country_code = country_codes.get(country_name, "un")
+    return f"https://flagcdn.com/w320/{country_code}.png"
+
 def set_background():
     """Set the background image"""
     background_image = get_background_image()
@@ -919,16 +968,32 @@ def main():
         st.session_state.user_answer = None
     
     # Display current flag
-    if st.session_state.current_flag:
+    if st.session_state.current_flag and st.session_state.correct_answer:
+        # Get flag image URL
+        flag_url = get_flag_image_url(st.session_state.correct_answer)
+        
         st.markdown(
             f"""
             <div class="flag-display">
-                <h2 style="font-size: 8rem; margin: 20px 0;">{st.session_state.current_flag}</h2>
-                <h3 style="color: #333;">Which country does this flag belong to?</h3>
+                <h3 style="color: #333; margin-bottom: 20px;">Which country does this flag belong to?</h3>
             </div>
             """,
             unsafe_allow_html=True
         )
+        
+        # Display flag image
+        try:
+            st.image(flag_url, width=300, caption="Country Flag")
+        except:
+            # Fallback to emoji if image fails
+            st.markdown(
+                f"""
+                <div style="text-align: center; font-size: 6rem; margin: 20px 0;">
+                    {st.session_state.current_flag}
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
         
         # Display options
         if not st.session_state.show_result:
