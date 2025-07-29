@@ -843,83 +843,65 @@ def get_flag_image_url(country_name):
     return f"https://flagcdn.com/w320/{country_code}.png"
 
 def set_background():
-    """Set the background image"""
-    background_image = get_background_image()
-    if background_image:
-        st.markdown(
-            f"""
-            <style>
-            .stApp {{
-                background-image: url("data:image/png;base64,{background_image}");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                position: relative;
-            }}
-            .stApp::before {{
-                content: '';
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.4);
-                z-index: -1;
-            }}
-            .main-header {{
-                background-color: rgba(0, 0, 0, 0.8);
-                padding: 20px;
-                border-radius: 10px;
-                margin-bottom: 20px;
-                backdrop-filter: blur(10px);
-            }}
-            .flag-display {{
-                background-color: rgba(255, 255, 255, 0.95);
-                padding: 30px;
-                border-radius: 15px;
-                text-align: center;
-                margin: 20px 0;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-                backdrop-filter: blur(10px);
-            }}
-            .option-button {{
-                background-color: rgba(255, 255, 255, 0.9);
-                border: 2px solid #ddd;
-                border-radius: 10px;
-                padding: 15px;
-                margin: 10px 0;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(5px);
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }}
-            .option-button:hover {{
-                background-color: rgba(255, 255, 255, 1);
-                border-color: #007bff;
-                transform: translateY(-2px);
-                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            }}
-            .correct-answer {{
-                background-color: rgba(40, 167, 69, 0.8) !important;
-                border-color: #28a745 !important;
-                color: white !important;
-            }}
-            .wrong-answer {{
-                background-color: rgba(220, 53, 69, 0.8) !important;
-                border-color: #dc3545 !important;
-                color: white !important;
-            }}
-            .fact-box {{
-                background-color: rgba(255, 193, 7, 0.9);
-                padding: 15px;
-                border-radius: 10px;
-                margin: 15px 0;
-                border-left: 5px solid #ffc107;
-            }}
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
+    """Set clean background styling"""
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .main-header {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .flag-display {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        .option-button {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .option-button:hover {
+            background-color: rgba(255, 255, 255, 1);
+            border-color: #007bff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .correct-answer {
+            background-color: rgba(40, 167, 69, 0.8) !important;
+            border-color: #28a745 !important;
+            color: white !important;
+        }
+        .wrong-answer {
+            background-color: rgba(220, 53, 69, 0.8) !important;
+            border-color: #dc3545 !important;
+            color: white !important;
+        }
+        .fact-box {
+            background-color: rgba(255, 193, 7, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #ffc107;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
 def main():
     st.set_page_config(
@@ -950,8 +932,8 @@ def main():
     st.markdown(
         """
         <div class="main-header">
-            <h1 style="color: white; text-align: center; margin: 0;">🏳️ Country Flag Guessing Game 🏳️</h1>
-            <p style="color: white; text-align: center; margin: 10px 0 0 0;">Test your knowledge of world flags!</p>
+            <h1 style="color: #333; text-align: center; margin: 0;">🏳️ Country Flag Guessing Game 🏳️</h1>
+            <p style="color: #666; text-align: center; margin: 10px 0 0 0;">Test your knowledge of world flags!</p>
         </div>
         """,
         unsafe_allow_html=True
