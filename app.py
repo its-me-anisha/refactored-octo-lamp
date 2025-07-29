@@ -790,7 +790,7 @@ COUNTRIES_DATA = {
 def get_background_image():
     """Get the background image as base64 string"""
     try:
-        with open("countries_flags (1).png", "rb") as image_file:
+        with open("ChatGPT Image Jul 28, 2025, 11_58_24 PM.png", "rb") as image_file:
             encoded_string = base64.b64encode(image_file.read()).decode()
         return encoded_string
     except:
@@ -845,40 +845,71 @@ def get_flag_image_url(country_name):
     return f"https://flagcdn.com/w320/{country_code}.png"
 
 def get_hint(country_name):
-    """Generate a hint for the given country"""
-    # Predefined hints for some countries
-    hints = {
-        "Afghanistan": "This country's flag has black, red, and green stripes with a central emblem.",
-        "Albania": "This flag features a black double-headed eagle on a red background.",
-        "Algeria": "This flag has green and white vertical stripes with a red crescent and star.",
-        "Argentina": "This flag has light blue and white horizontal stripes with a sun symbol.",
-        "Australia": "This flag has a blue background with the Union Jack and white stars.",
-        "Brazil": "This flag has a green background with a yellow diamond and blue circle.",
-        "Canada": "This flag has red stripes on the sides with a red maple leaf in the center.",
-        "China": "This flag has a red background with five yellow stars.",
-        "France": "This flag has three vertical stripes: blue, white, and red.",
-        "Germany": "This flag has three horizontal stripes: black, red, and gold.",
-        "India": "This flag has orange, white, and green horizontal stripes with a blue wheel.",
-        "Italy": "This flag has three vertical stripes: green, white, and red.",
-        "Japan": "This flag has a white background with a red circle in the center.",
-        "Mexico": "This flag has green, white, and red vertical stripes with an eagle and snake.",
-        "Netherlands": "This flag has three horizontal stripes: red, white, and blue.",
-        "Russia": "This flag has three horizontal stripes: white, blue, and red.",
-        "South Africa": "This flag has six colors including red, blue, green, yellow, black, and white.",
-        "Spain": "This flag has red and yellow horizontal stripes with a coat of arms.",
-        "United Kingdom": "This flag combines the crosses of England, Scotland, and Northern Ireland.",
-        "United States": "This flag has red and white stripes with a blue rectangle containing white stars."
+    """Generate an additional fact about the country"""
+    # Additional facts for countries (different from the main facts)
+    additional_facts = {
+        "Afghanistan": "They are home to the ancient city of Kabul and have been a crossroads of civilizations for thousands of years.",
+        "Albania": "They have one of the highest numbers of bunkers per capita in the world, built during the communist era.",
+        "Algeria": "They are the largest country in Africa by land area and have the world's largest desert, the Sahara.",
+        "Argentina": "They are famous for tango dancing and have the world's highest waterfall, Iguazu Falls.",
+        "Australia": "They are home to unique wildlife like kangaroos and koalas, and have the world's largest coral reef system.",
+        "Brazil": "They are the world's largest producer of coffee and are home to the Amazon Rainforest.",
+        "Canada": "They have the world's longest coastline and are known for their maple syrup production.",
+        "China": "They are home to the Great Wall, which is over 13,000 miles long, and have the world's largest population.",
+        "France": "They are famous for their wine, cheese, and the Eiffel Tower in Paris.",
+        "Germany": "They are known for their beer, sausages, and the famous Oktoberfest celebration.",
+        "India": "They are the world's largest democracy and are famous for their Bollywood film industry.",
+        "Italy": "They are home to more UNESCO World Heritage sites than any other country in the world.",
+        "Japan": "They have the world's highest life expectancy and are famous for their bullet trains.",
+        "Mexico": "They are the birthplace of chocolate and have the world's largest pyramid, the Great Pyramid of Cholula.",
+        "Netherlands": "They are famous for their tulips, windmills, and being one of the most bicycle-friendly countries.",
+        "Russia": "They span 11 time zones and are the largest country in the world by land area.",
+        "South Africa": "They are the world's largest producer of platinum and have three capital cities.",
+        "Spain": "They are famous for flamenco dancing and have the world's largest tomato fight, La Tomatina.",
+        "United Kingdom": "They have the world's oldest parliament and are home to the world's largest library.",
+        "United States": "They have the world's largest economy and are home to the world's most visited national park."
     }
     
-    # Return predefined hint if available, otherwise generate a generic hint
-    if country_name in hints:
-        return hints[country_name]
+    # Return additional fact if available, otherwise generate a diverse fact
+    if country_name in additional_facts:
+        return additional_facts[country_name]
     else:
-        # Generate a generic hint based on the country name
-        return f"Think about the flag of {country_name}. Look for distinctive colors or symbols."
+        # Generate diverse facts based on country characteristics
+        diverse_facts = [
+            f"They are known for their beautiful landscapes and natural wonders.",
+            f"They have a fascinating history that spans many centuries.",
+            f"They are famous for their delicious traditional cuisine.",
+            f"They have produced many famous artists and musicians.",
+            f"They are home to ancient historical sites and monuments.",
+            f"They have unique festivals and celebrations throughout the year.",
+            f"They are known for their traditional crafts and handmade goods.",
+            f"They have diverse wildlife and natural ecosystems.",
+            f"They are famous for their traditional dances and music.",
+            f"They have important archaeological discoveries.",
+            f"They are known for their traditional clothing and textiles.",
+            f"They have beautiful beaches and coastal areas.",
+            f"They are famous for their traditional sports and games.",
+            f"They have important religious and spiritual sites.",
+            f"They are known for their traditional medicine and healing practices.",
+            f"They have unique architectural styles and buildings.",
+            f"They are famous for their traditional storytelling and literature.",
+            f"They have important trade routes and commercial history.",
+            f"They are known for their traditional farming and agriculture.",
+            f"They have beautiful mountain ranges and hiking trails."
+        ]
+        return random.choice(diverse_facts)
 
 def set_background():
-    """Set the background image with dimming"""
+    """Set background with countries flags"""
+    # Set page background to black
+    st.set_page_config(
+        page_title="Flag Guessing Game",
+        page_icon="🏳️",
+        layout="wide",
+        initial_sidebar_state="collapsed"
+    )
+    
+    # Load the countries flags background with heavy tinting
     try:
         background_image = get_background_image()
         if background_image:
@@ -890,7 +921,6 @@ def set_background():
                     background-size: cover;
                     background-repeat: no-repeat;
                     background-attachment: fixed;
-                    position: relative;
                 }}
                 .stApp::before {{
                     content: '';
@@ -899,118 +929,58 @@ def set_background():
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    background-color: rgba(0, 0, 0, 0.5);
+                    background-color: rgba(0, 0, 0, 0.9);
                     z-index: -1;
+                }}
+                .content-container {{
+                    background-color: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin: 10px 0;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
                 }}
                 </style>
                 """,
                 unsafe_allow_html=True
             )
         else:
-            # Fallback to gradient background
+            # Fallback to black background
             st.markdown(
                 """
                 <style>
                 .stApp {
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    background: #000000 !important;
+                }
+                .content-container {
+                    background-color: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin: 10px 0;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
                 }
                 </style>
                 """,
                 unsafe_allow_html=True
             )
-    except Exception as e:
-        # Fallback to gradient background if there's any error
+    except:
+        # Fallback to black background
         st.markdown(
             """
             <style>
             .stApp {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: #000000 !important;
+            }
+            .content-container {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                margin: 10px 0;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             }
             </style>
             """,
             unsafe_allow_html=True
         )
-    
-    # Always apply the component styles
-    st.markdown(
-        """
-        <style>
-        .main-header {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .flag-display {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            margin: 20px 0;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-        .option-button {
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .option-button:hover {
-            background-color: rgba(255, 255, 255, 1);
-            border-color: #007bff;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-        .hint-button {
-            background-color: rgba(255, 193, 7, 0.9);
-            border: 2px solid #ffc107;
-            border-radius: 10px;
-            padding: 10px 20px;
-            margin: 10px 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            color: #333;
-            font-weight: bold;
-        }
-        .hint-button:hover {
-            background-color: rgba(255, 193, 7, 1);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-        .hint-box {
-            background-color: rgba(173, 216, 230, 0.9);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            border-left: 5px solid #87ceeb;
-        }
-        .correct-answer {
-            background-color: rgba(40, 167, 69, 0.8) !important;
-            border-color: #28a745 !important;
-            color: white !important;
-        }
-        .wrong-answer {
-            background-color: rgba(220, 53, 69, 0.8) !important;
-            border-color: #dc3545 !important;
-            color: white !important;
-        }
-        .fact-box {
-            background-color: rgba(255, 193, 7, 0.9);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            border-left: 5px solid #ffc107;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
 
 def main():
     st.set_page_config(
@@ -1018,9 +988,6 @@ def main():
         page_icon="🏳️",
         layout="wide"
     )
-    
-    # Add some basic content to ensure the app loads
-    st.write("Loading Country Flag Guessing Game...")
     
     set_background()
     
@@ -1045,23 +1012,36 @@ def main():
     # Header
     st.markdown(
         """
-        <div class="main-header">
-            <h1 style="color: #333; text-align: center; margin: 0;">🏳️ Country Flag Guessing Game 🏳️</h1>
-            <p style="color: #666; text-align: center; margin: 10px 0 0 0;">Test your knowledge of world flags!</p>
+        <div class="content-container">
+            <h1 style="text-align: center; color: #333;">🏳️ Country Flag Guessing Game 🏳️</h1>
+            <p style="text-align: center; color: #666; font-size: 18px;"><strong>Test your knowledge of world flags!</strong></p>
         </div>
         """,
         unsafe_allow_html=True
     )
     
     # Score display
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric("Score", st.session_state.score)
-    with col2:
-        st.metric("Total Questions", st.session_state.total_questions)
-    with col3:
-        accuracy = (st.session_state.score / max(st.session_state.total_questions, 1)) * 100
-        st.metric("Accuracy", f"{accuracy:.1f}%")
+    st.markdown(
+        f"""
+        <div class="content-container">
+            <div style="display: flex; justify-content: space-around; text-align: center;">
+                <div>
+                    <h3>Score</h3>
+                    <h2 style="color: #007bff;">{st.session_state.score}</h2>
+                </div>
+                <div>
+                    <h3>Total Questions</h3>
+                    <h2 style="color: #28a745;">{st.session_state.total_questions}</h2>
+                </div>
+                <div>
+                    <h3>Accuracy</h3>
+                    <h2 style="color: #ffc107;">{(st.session_state.score / max(st.session_state.total_questions, 1)) * 100:.1f}%</h2>
+                </div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
     
     # Main game area
     if st.session_state.current_flag is None or st.button("🎯 Guess the Country Flag", key="new_game"):
@@ -1083,50 +1063,55 @@ def main():
     
     # Display current flag
     if st.session_state.current_flag and st.session_state.correct_answer:
-        # Get flag image URL
-        flag_url = get_flag_image_url(st.session_state.correct_answer)
-        
         st.markdown(
-            f"""
-            <div class="flag-display">
-                <h3 style="color: #333; margin-bottom: 20px;">Which country does this flag belong to?</h3>
+            """
+            <div class="content-container">
+                <h2 style="text-align: center; color: #333;">Which country does this flag belong to?</h2>
             </div>
             """,
             unsafe_allow_html=True
         )
         
-        # Display flag image with white border
+        # Display flag image
+        st.markdown(
+            """
+            <div class="content-container" style="text-align: center;">
+            """,
+            unsafe_allow_html=True
+        )
+        
         try:
-            # First try to display with st.image for better error handling
-            st.image(flag_url, width=300, caption="Country Flag")
-        except Exception as e:
-            # Fallback to emoji if image fails
-            st.markdown(
-                f"""
-                <div style="text-align: center; font-size: 6rem; margin: 20px 0; padding: 20px; border: 4px solid white; border-radius: 10px; background-color: rgba(255,255,255,0.1); display: inline-block;">
-                    {st.session_state.current_flag}
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+            flag_url = get_flag_image_url(st.session_state.correct_answer)
+            st.image(flag_url, width=300)
+        except:
+            # Fallback to emoji
+            st.markdown(f"**Flag:** {st.session_state.current_flag}")
+            st.markdown(f"**Flag Emoji:** {st.session_state.current_flag}")
+        
+        st.markdown("</div>", unsafe_allow_html=True)
         
         # Display hint button and options
         if not st.session_state.show_result:
+            st.markdown(
+                """
+                <div class="content-container">
+                """,
+                unsafe_allow_html=True
+            )
+            
             # Hint button
-            col1, col2, col3 = st.columns([1, 2, 1])
-            with col2:
-                if st.button("💡 Hint", key="hint_button", use_container_width=True):
-                    st.session_state.show_hint = True
-                    st.rerun()
+            if st.button("💡 Hint", key="hint_button"):
+                st.session_state.show_hint = True
+                st.rerun()
             
             # Show hint if requested
             if st.session_state.show_hint:
                 hint_text = get_hint(st.session_state.correct_answer)
                 st.markdown(
                     f"""
-                    <div class="hint-box">
-                        <h4>💡 Hint:</h4>
-                        <p>{hint_text}</p>
+                    <div style="background-color: #d1ecf1; border: 3px solid white; border-radius: 10px; padding: 15px; margin: 10px 0;">
+                        <h4 style="color: #0c5460; margin: 0 0 10px 0;">💡 Hint</h4>
+                        <p style="color: #333; margin: 0;">{hint_text}</p>
                     </div>
                     """,
                     unsafe_allow_html=True
@@ -1134,39 +1119,62 @@ def main():
             
             # Display options
             for i, option in enumerate(st.session_state.options):
-                if st.button(option, key=f"option_{i}", use_container_width=True):
+                if st.button(option, key=f"option_{i}"):
                     st.session_state.user_answer = option
                     st.session_state.show_result = True
                     st.session_state.total_questions += 1
                     if option == st.session_state.correct_answer:
                         st.session_state.score += 1
                     st.rerun()
+            
+            st.markdown("</div>", unsafe_allow_html=True)
         
         # Show result
         if st.session_state.show_result and st.session_state.user_answer:
-            st.markdown("---")
+            st.markdown(
+                """
+                <div class="content-container">
+                """,
+                unsafe_allow_html=True
+            )
             
             if st.session_state.user_answer == st.session_state.correct_answer:
-                st.success("🎉 Correct! Well done!")
+                st.markdown(
+                    """
+                    <div style="background-color: #d4edda; border: 3px solid white; border-radius: 10px; padding: 15px; margin: 10px 0; text-align: center;">
+                        <h3 style="color: #155724; margin: 0;">🎉 Correct! Well done!</h3>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
             else:
-                st.error(f"❌ Wrong! The correct answer is: **{st.session_state.correct_answer}**")
+                st.markdown(
+                    f"""
+                    <div style="background-color: #f8d7da; border: 3px solid white; border-radius: 10px; padding: 15px; margin: 10px 0; text-align: center;">
+                        <h3 style="color: #721c24; margin: 0;">❌ Wrong! The correct answer is: <strong>{st.session_state.correct_answer}</strong></h3>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
             
             # Show fact
             fact = COUNTRIES_DATA[st.session_state.correct_answer]["fact"]
             st.markdown(
                 f"""
-                <div class="fact-box">
-                    <h4>💡 Did you know?</h4>
-                    <p><strong>{st.session_state.correct_answer}:</strong> {fact}</p>
+                <div style="background-color: #fff3cd; border: 3px solid white; border-radius: 10px; padding: 15px; margin: 10px 0;">
+                    <h4 style="color: #856404; margin: 0 0 10px 0;">💡 Did you know?</h4>
+                    <p style="color: #333; margin: 0;"><strong>{st.session_state.correct_answer}:</strong> {fact}</p>
                 </div>
                 """,
                 unsafe_allow_html=True
             )
             
             # Next question button
-            if st.button("🔄 Next Question", use_container_width=True):
+            if st.button("🔄 Next Question"):
                 st.session_state.current_flag = None
                 st.rerun()
+            
+            st.markdown("</div>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main() 
