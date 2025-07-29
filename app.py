@@ -9,11 +9,13 @@ import requests
 COUNTRIES_DATA = {
     "Afghanistan": {
         "flag": "🇦🇫",
-        "fact": "Afghanistan is known as the 'Graveyard of Empires' due to its history of resisting foreign invasions."
+        "fact": "Afghanistan is known as the 'Graveyard of Empires' due to its history of resisting foreign invasions.",
+        "hint": "This country's flag has black, red, and green stripes with a central emblem."
     },
     "Albania": {
         "flag": "🇦🇱",
-        "fact": "Albania has the world's largest number of bunkers per capita, built during the communist era."
+        "fact": "Albania has the world's largest number of bunkers per capita, built during the communist era.",
+        "hint": "This flag features a black double-headed eagle on a red background."
     },
     "Algeria": {
         "flag": "🇩🇿",
@@ -842,66 +844,139 @@ def get_flag_image_url(country_name):
     country_code = country_codes.get(country_name, "un")
     return f"https://flagcdn.com/w320/{country_code}.png"
 
+def get_hint(country_name):
+    """Generate a hint for the given country"""
+    # Predefined hints for some countries
+    hints = {
+        "Afghanistan": "This country's flag has black, red, and green stripes with a central emblem.",
+        "Albania": "This flag features a black double-headed eagle on a red background.",
+        "Algeria": "This flag has green and white vertical stripes with a red crescent and star.",
+        "Argentina": "This flag has light blue and white horizontal stripes with a sun symbol.",
+        "Australia": "This flag has a blue background with the Union Jack and white stars.",
+        "Brazil": "This flag has a green background with a yellow diamond and blue circle.",
+        "Canada": "This flag has red stripes on the sides with a red maple leaf in the center.",
+        "China": "This flag has a red background with five yellow stars.",
+        "France": "This flag has three vertical stripes: blue, white, and red.",
+        "Germany": "This flag has three horizontal stripes: black, red, and gold.",
+        "India": "This flag has orange, white, and green horizontal stripes with a blue wheel.",
+        "Italy": "This flag has three vertical stripes: green, white, and red.",
+        "Japan": "This flag has a white background with a red circle in the center.",
+        "Mexico": "This flag has green, white, and red vertical stripes with an eagle and snake.",
+        "Netherlands": "This flag has three horizontal stripes: red, white, and blue.",
+        "Russia": "This flag has three horizontal stripes: white, blue, and red.",
+        "South Africa": "This flag has six colors including red, blue, green, yellow, black, and white.",
+        "Spain": "This flag has red and yellow horizontal stripes with a coat of arms.",
+        "United Kingdom": "This flag combines the crosses of England, Scotland, and Northern Ireland.",
+        "United States": "This flag has red and white stripes with a blue rectangle containing white stars."
+    }
+    
+    # Return predefined hint if available, otherwise generate a generic hint
+    if country_name in hints:
+        return hints[country_name]
+    else:
+        # Generate a generic hint based on the country name
+        return f"Think about the flag of {country_name}. Look for distinctive colors or symbols."
+
 def set_background():
-    """Set clean background styling"""
-    st.markdown(
-        """
-        <style>
-        .stApp {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .main-header {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .flag-display {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            margin: 20px 0;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-        .option-button {
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .option-button:hover {
-            background-color: rgba(255, 255, 255, 1);
-            border-color: #007bff;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-        .correct-answer {
-            background-color: rgba(40, 167, 69, 0.8) !important;
-            border-color: #28a745 !important;
-            color: white !important;
-        }
-        .wrong-answer {
-            background-color: rgba(220, 53, 69, 0.8) !important;
-            border-color: #dc3545 !important;
-            color: white !important;
-        }
-        .fact-box {
-            background-color: rgba(255, 193, 7, 0.9);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            border-left: 5px solid #ffc107;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    """Set the background image with dimming"""
+    background_image = get_background_image()
+    if background_image:
+        st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background-image: url("data:image/png;base64,{background_image}");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                position: relative;
+            }}
+            .stApp::before {{
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: -1;
+            }}
+            .main-header {{
+                background-color: rgba(255, 255, 255, 0.95);
+                padding: 20px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }}
+            .flag-display {{
+                background-color: rgba(255, 255, 255, 0.95);
+                padding: 30px;
+                border-radius: 15px;
+                text-align: center;
+                margin: 20px 0;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            }}
+            .option-button {{
+                background-color: rgba(255, 255, 255, 0.9);
+                border: 2px solid #ddd;
+                border-radius: 10px;
+                padding: 15px;
+                margin: 10px 0;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }}
+            .option-button:hover {{
+                background-color: rgba(255, 255, 255, 1);
+                border-color: #007bff;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            }}
+            .hint-button {{
+                background-color: rgba(255, 193, 7, 0.9);
+                border: 2px solid #ffc107;
+                border-radius: 10px;
+                padding: 10px 20px;
+                margin: 10px 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                color: #333;
+                font-weight: bold;
+            }}
+            .hint-button:hover {{
+                background-color: rgba(255, 193, 7, 1);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            }}
+            .hint-box {{
+                background-color: rgba(173, 216, 230, 0.9);
+                padding: 15px;
+                border-radius: 10px;
+                margin: 15px 0;
+                border-left: 5px solid #87ceeb;
+            }}
+            .correct-answer {{
+                background-color: rgba(40, 167, 69, 0.8) !important;
+                border-color: #28a745 !important;
+                color: white !important;
+            }}
+            .wrong-answer {{
+                background-color: rgba(220, 53, 69, 0.8) !important;
+                border-color: #dc3545 !important;
+                color: white !important;
+            }}
+            .fact-box {{
+                background-color: rgba(255, 193, 7, 0.9);
+                padding: 15px;
+                border-radius: 10px;
+                margin: 15px 0;
+                border-left: 5px solid #ffc107;
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
 
 def main():
     st.set_page_config(
@@ -927,6 +1002,8 @@ def main():
         st.session_state.score = 0
     if 'total_questions' not in st.session_state:
         st.session_state.total_questions = 0
+    if 'show_hint' not in st.session_state:
+        st.session_state.show_hint = False
     
     # Header
     st.markdown(
@@ -965,6 +1042,7 @@ def main():
         
         st.session_state.show_result = False
         st.session_state.user_answer = None
+        st.session_state.show_hint = False
     
     # Display current flag
     if st.session_state.current_flag and st.session_state.correct_answer:
@@ -1001,8 +1079,29 @@ def main():
                 unsafe_allow_html=True
             )
         
-        # Display options
+        # Display hint button and options
         if not st.session_state.show_result:
+            # Hint button
+            col1, col2, col3 = st.columns([1, 2, 1])
+            with col2:
+                if st.button("💡 Hint", key="hint_button", use_container_width=True):
+                    st.session_state.show_hint = True
+                    st.rerun()
+            
+            # Show hint if requested
+            if st.session_state.show_hint:
+                hint_text = get_hint(st.session_state.correct_answer)
+                st.markdown(
+                    f"""
+                    <div class="hint-box">
+                        <h4>💡 Hint:</h4>
+                        <p>{hint_text}</p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+            
+            # Display options
             for i, option in enumerate(st.session_state.options):
                 if st.button(option, key=f"option_{i}", use_container_width=True):
                     st.session_state.user_answer = option
