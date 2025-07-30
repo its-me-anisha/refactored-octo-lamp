@@ -934,33 +934,36 @@ def set_background():
                 }}
                 .content-container {{
                     background-color: white;
-                    padding: 15px;
-                    border-radius: 8px;
-                    margin: 5px 0;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                    max-width: 90vw;
+                    padding: 2px;
+                    border-radius: 3px;
+                    margin: 0px 0;
+                    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                    max-width: 75vw;
                     width: 100%;
                     margin-left: auto;
                     margin-right: auto;
                 }}
                 .score-container {{
                     background-color: white;
-                    padding: 10px;
-                    border-radius: 8px;
-                    margin: 5px 0;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                    max-width: 90vw;
+                    padding: 2px;
+                    border-radius: 3px;
+                    margin: 0px 0;
+                    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                    max-width: 75vw;
                     width: 100%;
                     margin-left: auto;
                     margin-right: auto;
                 }}
+                .score-container h3 {{
+                    color: #000000 !important;
+                }}
                 .flag-container {{
                     background-color: white;
-                    padding: 10px;
-                    border-radius: 8px;
-                    margin: 5px 0;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                    max-width: 90vw;
+                    padding: 2px;
+                    border-radius: 3px;
+                    margin: 0px 0;
+                    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                    max-width: 75vw;
                     width: 100%;
                     margin-left: auto;
                     margin-right: auto;
@@ -968,69 +971,48 @@ def set_background():
                 }}
                 .options-container {{
                     background-color: white;
-                    padding: 10px;
-                    border-radius: 8px;
-                    margin: 5px 0;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                    max-width: 90vw;
+                    padding: 2px;
+                    border-radius: 3px;
+                    margin: 0px 0;
+                    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                    max-width: 75vw;
                     width: 100%;
                     margin-left: auto;
                     margin-right: auto;
                 }}
                 .result-container {{
                     background-color: white;
-                    padding: 10px;
-                    border-radius: 8px;
-                    margin: 5px 0;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                    max-width: 90vw;
+                    padding: 2px;
+                    border-radius: 3px;
+                    margin: 0px 0;
+                    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                    max-width: 75vw;
                     width: 100%;
                     margin-left: auto;
                     margin-right: auto;
                 }}
                 .user-choice {{
                     background-color: #e3f2fd;
-                    border: 2px solid #2196f3;
-                    border-radius: 6px;
-                    padding: 8px;
-                    margin: 5px 0;
+                    border: 1px solid #2196f3;
+                    border-radius: 3px;
+                    padding: 2px;
+                    margin: 1px 0;
                     text-align: center;
                     font-weight: bold;
                     color: #1976d2;
+                    font-size: 11px;
                 }}
                 .stButton > button {{
                     width: 100%;
-                    margin: 2px 0;
-                    padding: 8px 16px;
-                    font-size: 14px;
-                    min-height: 40px;
+                    margin: 0px 0;
+                    padding: 3px 6px;
+                    font-size: 11px;
+                    min-height: 25px;
                 }}
                 @media (max-width: 768px) {{
                     .content-container, .score-container, .flag-container, .options-container, .result-container {{
-                        max-width: 95vw;
-                        padding: 8px;
-                    }}
-                    h1 {{
-                        font-size: 20px !important;
-                    }}
-                    h2 {{
-                        font-size: 18px !important;
-                    }}
-                    h3 {{
-                        font-size: 14px !important;
-                    }}
-                    p {{
-                        font-size: 12px !important;
-                    }}
-                    .stButton > button {{
-                        font-size: 12px;
-                        padding: 6px 12px;
-                    }}
-                }}
-                @media (max-width: 480px) {{
-                    .content-container, .score-container, .flag-container, .options-container, .result-container {{
-                        max-width: 98vw;
-                        padding: 5px;
+                        max-width: 92vw;
+                        padding: 4px;
                     }}
                     h1 {{
                         font-size: 18px !important;
@@ -1047,23 +1029,47 @@ def set_background():
                     .stButton > button {{
                         font-size: 11px;
                         padding: 4px 8px;
+                        min-height: 30px;
+                    }}
+                }}
+                @media (max-width: 480px) {{
+                    .content-container, .score-container, .flag-container, .options-container, .result-container {{
+                        max-width: 96vw;
+                        padding: 3px;
+                    }}
+                    h1 {{
+                        font-size: 16px !important;
+                    }}
+                    h2 {{
+                        font-size: 14px !important;
+                    }}
+                    h3 {{
+                        font-size: 10px !important;
+                    }}
+                    p {{
+                        font-size: 10px !important;
+                    }}
+                    .stButton > button {{
+                        font-size: 10px;
+                        padding: 3px 6px;
+                        min-height: 28px;
                     }}
                 }}
                 h1 {{
-                    font-size: 24px !important;
-                    margin: 10px 0 !important;
+                    font-size: 14px !important;
+                    margin: 1px 0 !important;
                 }}
                 h2 {{
-                    font-size: 20px !important;
-                    margin: 8px 0 !important;
+                    font-size: 12px !important;
+                    margin: 0px 0 !important;
                 }}
                 h3 {{
-                    font-size: 16px !important;
-                    margin: 6px 0 !important;
+                    font-size: 10px !important;
+                    margin: 0px 0 !important;
                 }}
                 p {{
-                    font-size: 14px !important;
-                    margin: 5px 0 !important;
+                    font-size: 10px !important;
+                    margin: 0px 0 !important;
                 }}
                 </style>
                 """,
@@ -1076,124 +1082,153 @@ def set_background():
                 <style>
                 .stApp {
                     background: #000000 !important;
+                    overflow: hidden !important;
                 }
-                .content-container {
-                    background-color: white;
-                    padding: 15px;
-                    border-radius: 8px;
-                    margin: 5px 0;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                    max-width: 90vw;
-                    width: 100%;
-                    margin-left: auto;
-                    margin-right: auto;
+                .main .block-container {
+                    overflow: hidden !important;
                 }
-                .score-container {
-                    background-color: white;
-                    padding: 10px;
-                    border-radius: 8px;
-                    margin: 5px 0;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                    max-width: 90vw;
-                    width: 100%;
-                    margin-left: auto;
-                    margin-right: auto;
+                            .stApp > div {
+                overflow: hidden !important;
+            }
+            body {
+                overflow: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            html {
+                overflow: hidden !important;
+            }
+                body {
+                    overflow: hidden !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
                 }
-                .flag-container {
-                    background-color: white;
-                    padding: 10px;
-                    border-radius: 8px;
-                    margin: 5px 0;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                    max-width: 90vw;
-                    width: 100%;
-                    margin-left: auto;
-                    margin-right: auto;
-                    text-align: center;
+                html {
+                    overflow: hidden !important;
                 }
-                .options-container {
-                    background-color: white;
-                    padding: 10px;
-                    border-radius: 8px;
-                    margin: 5px 0;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                    max-width: 90vw;
-                    width: 100%;
-                    margin-left: auto;
-                    margin-right: auto;
+                            .content-container {
+                background-color: white;
+                padding: 2px;
+                border-radius: 3px;
+                margin: 0px 0;
+                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                max-width: 75vw;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .score-container {
+                background-color: white;
+                padding: 2px;
+                border-radius: 3px;
+                margin: 0px 0;
+                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                max-width: 75vw;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .score-container h3 {
+                color: #000000 !important;
+            }
+            .flag-container {
+                background-color: white;
+                padding: 2px;
+                border-radius: 3px;
+                margin: 0px 0;
+                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                max-width: 75vw;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            .options-container {
+                background-color: white;
+                padding: 2px;
+                border-radius: 3px;
+                margin: 0px 0;
+                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                max-width: 75vw;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .result-container {
+                background-color: white;
+                padding: 2px;
+                border-radius: 3px;
+                margin: 0px 0;
+                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                max-width: 75vw;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+                            .user-choice {
+                background-color: #e3f2fd;
+                border: 1px solid #2196f3;
+                border-radius: 3px;
+                padding: 2px;
+                margin: 1px 0;
+                text-align: center;
+                font-weight: bold;
+                color: #1976d2;
+                font-size: 11px;
+            }
+            .stButton > button {
+                width: 100%;
+                margin: 0px 0;
+                padding: 4px 8px;
+                font-size: 12px;
+                min-height: 30px;
+            }
+                            @media (max-width: 768px) {
+                .content-container, .score-container, .flag-container, .options-container, .result-container {
+                    max-width: 92vw;
+                    padding: 4px;
                 }
-                .result-container {
-                    background-color: white;
-                    padding: 10px;
-                    border-radius: 8px;
-                    margin: 5px 0;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                    max-width: 90vw;
-                    width: 100%;
-                    margin-left: auto;
-                    margin-right: auto;
+                h1 {
+                    font-size: 18px !important;
                 }
-                .user-choice {
-                    background-color: #e3f2fd;
-                    border: 2px solid #2196f3;
-                    border-radius: 6px;
-                    padding: 8px;
-                    margin: 5px 0;
-                    text-align: center;
-                    font-weight: bold;
-                    color: #1976d2;
+                h2 {
+                    font-size: 16px !important;
+                }
+                h3 {
+                    font-size: 12px !important;
+                }
+                p {
+                    font-size: 11px !important;
                 }
                 .stButton > button {
-                    width: 100%;
-                    margin: 2px 0;
-                    padding: 8px 16px;
-                    font-size: 14px;
-                    min-height: 40px;
+                    font-size: 11px;
+                    padding: 4px 8px;
+                    min-height: 30px;
                 }
-                @media (max-width: 768px) {
-                    .content-container, .score-container, .flag-container, .options-container, .result-container {
-                        max-width: 95vw;
-                        padding: 8px;
-                    }
-                    h1 {
-                        font-size: 20px !important;
-                    }
-                    h2 {
-                        font-size: 18px !important;
-                    }
-                    h3 {
-                        font-size: 14px !important;
-                    }
-                    p {
-                        font-size: 12px !important;
-                    }
-                    .stButton > button {
-                        font-size: 12px;
-                        padding: 6px 12px;
-                    }
+            }
+            @media (max-width: 480px) {
+                .content-container, .score-container, .flag-container, .options-container, .result-container {
+                    max-width: 96vw;
+                    padding: 3px;
                 }
-                @media (max-width: 480px) {
-                    .content-container, .score-container, .flag-container, .options-container, .result-container {
-                        max-width: 98vw;
-                        padding: 5px;
-                    }
-                    h1 {
-                        font-size: 18px !important;
-                    }
-                    h2 {
-                        font-size: 16px !important;
-                    }
-                    h3 {
-                        font-size: 12px !important;
-                    }
-                    p {
-                        font-size: 11px !important;
-                    }
-                    .stButton > button {
-                        font-size: 11px;
-                        padding: 4px 8px;
-                    }
+                h1 {
+                    font-size: 16px !important;
                 }
+                h2 {
+                    font-size: 14px !important;
+                }
+                h3 {
+                    font-size: 10px !important;
+                }
+                p {
+                    font-size: 10px !important;
+                }
+                .stButton > button {
+                    font-size: 10px;
+                    padding: 3px 6px;
+                    min-height: 28px;
+                }
+            }
                 h1 {
                     font-size: 24px !important;
                     margin: 10px 0 !important;
@@ -1221,6 +1256,13 @@ def set_background():
             <style>
             .stApp {
                 background: #000000 !important;
+                overflow: hidden !important;
+            }
+            .main .block-container {
+                overflow: hidden !important;
+            }
+            .stApp > div {
+                overflow: hidden !important;
             }
             .content-container {
                 background-color: white;
@@ -1280,20 +1322,20 @@ def set_background():
                 font-size: 14px;
             }
             h1 {
-                font-size: 24px !important;
-                margin: 10px 0 !important;
+                font-size: 16px !important;
+                margin: 2px 0 !important;
             }
             h2 {
-                font-size: 20px !important;
-                margin: 8px 0 !important;
+                font-size: 14px !important;
+                margin: 1px 0 !important;
             }
             h3 {
-                font-size: 16px !important;
-                margin: 6px 0 !important;
+                font-size: 12px !important;
+                margin: 1px 0 !important;
             }
             p {
-                font-size: 14px !important;
-                margin: 5px 0 !important;
+                font-size: 11px !important;
+                margin: 1px 0 !important;
             }
             </style>
             """,
@@ -1304,7 +1346,8 @@ def main():
     st.set_page_config(
         page_title="Country Flag Guessing Game",
         page_icon="🏳️",
-        layout="wide"
+        layout="wide",
+        initial_sidebar_state="expanded"
     )
     
     set_background()
@@ -1326,40 +1369,182 @@ def main():
         st.session_state.total_questions = 0
     if 'show_hint' not in st.session_state:
         st.session_state.show_hint = False
+    if 'game_started' not in st.session_state:
+        st.session_state.game_started = False
     
-    # Header
-    st.markdown(
-        """
-        <div class="content-container">
-            <h1 style="text-align: center; color: #333;">🏳️ Country Flag Guessing Game 🏳️</h1>
-            <p style="text-align: center; color: #666; font-size: 18px;"><strong>Test your knowledge of world flags!</strong></p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    # Start screen
+    if not st.session_state.game_started:
+        st.markdown(
+            """
+            <div class="content-container">
+                <h1 style="text-align: center; color: #333;">🏳️ Country Flag Guessing Game 🏳️</h1>
+                <p style="text-align: center; color: #666; font-size: 18px;"><strong>Test your knowledge of world flags!</strong></p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        
+        # Center the start button
+        st.markdown(
+            """
+            <style>
+            .stButton > button {
+                height: 80px !important;
+                font-size: 24px !important;
+                font-weight: bold !important;
+                background-color: #4CAF50 !important;
+                color: white !important;
+                border-radius: 12px !important;
+                border: none !important;
+                transition: all 0.3s !important;
+            }
+            .stButton > button:hover {
+                background-color: #45a049 !important;
+                transform: scale(1.02) !important;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
+        
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            if st.button("🚀 START GAME", key="start_game", use_container_width=True):
+                st.session_state.game_started = True
+                st.rerun()
+        
+        return  # Stop here if game hasn't started
     
-    # Score display
-    st.markdown(
-        f"""
-        <div class="score-container">
-            <div style="display: flex; justify-content: space-around; text-align: center;">
-                <div>
-                    <h3>Score</h3>
-                    <h2 style="color: #007bff;">{st.session_state.score}</h2>
-                </div>
-                <div>
-                    <h3>Total Questions</h3>
-                    <h2 style="color: #28a745;">{st.session_state.total_questions}</h2>
-                </div>
-                <div>
-                    <h3>Accuracy</h3>
-                    <h2 style="color: #ffc107;">{(st.session_state.score / max(st.session_state.total_questions, 1)) * 100:.1f}%</h2>
+    # Check if game is over (10 questions)
+    game_over = st.session_state.total_questions >= 10
+    
+    if game_over:
+        # Game over - show final results
+        st.markdown(
+            """
+            <div class="content-container">
+                <h1 style="text-align: center; color: #333;">🎉 Game Complete! 🎉</h1>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        
+        # Show final score
+        final_score = st.session_state.score
+        final_accuracy = (final_score / 10) * 100
+        
+        st.markdown(
+            f"""
+            <div class="result-container">
+                <h2 style="text-align: center; color: #333;">Final Results</h2>
+                <div style="display: flex; justify-content: space-around; text-align: center; margin: 10px 0;">
+                    <div>
+                        <h3 style="color: #007bff;">Final Score</h3>
+                        <h2 style="color: #007bff; font-size: 36px;">{final_score}/10</h2>
+                    </div>
+                    <div>
+                        <h3 style="color: #28a745;">Accuracy</h3>
+                        <h2 style="color: #28a745; font-size: 36px;">{final_accuracy:.1f}%</h2>
+                    </div>
                 </div>
             </div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+            """,
+            unsafe_allow_html=True
+        )
+        
+        # Show confetti and celebration for good scores
+        if final_score >= 6:
+            st.markdown(
+                """
+                <div style="text-align: center; margin: 10px 0;">
+                    <h2 style="color: #ff6b6b;">🎊 Congratulations! 🎊</h2>
+                    <h3 style="color: #4ecdc4;">You're a Flag Master! 🌟</h3>
+                    
+                    <div style="text-align: center; margin: 15px 0;">
+                        <div style="display: inline-block; animation: bounce 1s infinite;">
+                            <span style="font-size: 30px;">🎉</span>
+                        </div>
+                        <div style="display: inline-block; animation: bounce 1s infinite 0.2s;">
+                            <span style="font-size: 30px;">🎊</span>
+                        </div>
+                        <div style="display: inline-block; animation: bounce 1s infinite 0.4s;">
+                            <span style="font-size: 30px;">🏳️</span>
+                        </div>
+                        <div style="display: inline-block; animation: bounce 1s infinite 0.6s;">
+                            <span style="font-size: 30px;">🚩</span>
+                        </div>
+                        <div style="display: inline-block; animation: bounce 1s infinite 0.8s;">
+                            <span style="font-size: 30px;">🎈</span>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin: 10px 0;">
+                        <div style="display: inline-block; animation: spin 2s linear infinite;">
+                            <span style="font-size: 25px;">🏁</span>
+                        </div>
+                        <div style="display: inline-block; animation: spin 2s linear infinite reverse;">
+                            <span style="font-size: 25px;">🎌</span>
+                        </div>
+                        <div style="display: inline-block; animation: spin 2s linear infinite;">
+                            <span style="font-size: 25px;">🎋</span>
+                        </div>
+                    </div>
+                    
+                    <style>
+                    @keyframes bounce {
+                        0%, 20%, 50%, 80%, 100% {
+                            transform: translateY(0);
+                        }
+                        40% {
+                            transform: translateY(-10px);
+                        }
+                        60% {
+                            transform: translateY(-5px);
+                        }
+                    }
+                    @keyframes spin {
+                        from {
+                            transform: rotate(0deg);
+                        }
+                        to {
+                            transform: rotate(360deg);
+                        }
+                    }
+                    </style>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+        else:
+            st.markdown(
+                """
+                <div style="text-align: center; margin: 20px 0;">
+                    <h2 style="color: #ff6b6b;">Good Try! 💪</h2>
+                    <h3 style="color: #4ecdc4;">Keep practicing to become a Flag Master! 🌟</h3>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+        
+        # Play again button
+        if st.button("🔄 Play Again", key="play_again"):
+            # Reset game state
+            st.session_state.score = 0
+            st.session_state.total_questions = 0
+            st.session_state.current_flag = None
+            st.session_state.show_result = False
+            st.session_state.user_answer = None
+            st.session_state.show_hint = False
+            st.session_state.game_started = False
+            st.rerun()
+        
+        return  # Stop execution here when game is over
+    
+    # Show progress during game
+    if st.session_state.total_questions > 0:
+        progress = st.session_state.total_questions / 10
+        st.progress(progress)
+        st.markdown(f"**Question {st.session_state.total_questions}/10**")
     
     # Main game area
     if st.session_state.current_flag is None or st.button("🎯 Guess the Country Flag", key="new_game"):
@@ -1400,8 +1585,10 @@ def main():
         
         try:
             flag_url = get_flag_image_url(st.session_state.correct_answer)
-            # Use responsive image sizing
-            st.image(flag_url, use_column_width=True)
+            # Center the flag and make it bigger
+            col1, col2, col3 = st.columns([1, 3, 1])
+            with col2:
+                st.image(flag_url, width=200)
         except:
             # Fallback to emoji
             st.markdown(f"**Flag:** {st.session_state.current_flag}")
@@ -1428,9 +1615,9 @@ def main():
                 hint_text = get_hint(st.session_state.correct_answer)
                 st.markdown(
                     f"""
-                    <div style="background-color: #d1ecf1; border: 2px solid white; border-radius: 6px; padding: 10px; margin: 5px 0;">
-                        <h4 style="color: #0c5460; margin: 0 0 5px 0; font-size: 14px;">💡 Hint</h4>
-                        <p style="color: #333; margin: 0; font-size: 13px;">{hint_text}</p>
+                    <div style="background-color: #d1ecf1; border: 1px solid white; border-radius: 3px; padding: 3px; margin: 1px 0;">
+                        <h4 style="color: #0c5460; margin: 0 0 1px 0; font-size: 10px;">💡 Hint</h4>
+                        <p style="color: #333; margin: 0; font-size: 10px;">{hint_text}</p>
                     </div>
                     """,
                     unsafe_allow_html=True
@@ -1470,8 +1657,8 @@ def main():
             if st.session_state.user_answer == st.session_state.correct_answer:
                 st.markdown(
                     """
-                    <div style="background-color: #d4edda; border: 2px solid white; border-radius: 6px; padding: 10px; margin: 5px 0; text-align: center;">
-                        <h3 style="color: #155724; margin: 0; font-size: 16px;">🎉 Correct! Well done!</h3>
+                    <div style="background-color: #d4edda; border: 1px solid white; border-radius: 3px; padding: 3px; margin: 1px 0; text-align: center;">
+                        <h3 style="color: #155724; margin: 0; font-size: 12px;">🎉 Correct! Well done!</h3>
                     </div>
                     """,
                     unsafe_allow_html=True
@@ -1479,8 +1666,8 @@ def main():
             else:
                 st.markdown(
                     f"""
-                    <div style="background-color: #f8d7da; border: 2px solid white; border-radius: 6px; padding: 10px; margin: 5px 0; text-align: center;">
-                        <h3 style="color: #721c24; margin: 0; font-size: 16px;">❌ Wrong! The correct answer is: <strong>{st.session_state.correct_answer}</strong></h3>
+                    <div style="background-color: #f8d7da; border: 1px solid white; border-radius: 3px; padding: 3px; margin: 1px 0; text-align: center;">
+                        <h3 style="color: #721c24; margin: 0; font-size: 12px;">❌ Wrong! The correct answer is: <strong>{st.session_state.correct_answer}</strong></h3>
                     </div>
                     """,
                     unsafe_allow_html=True
@@ -1490,9 +1677,9 @@ def main():
             fact = COUNTRIES_DATA[st.session_state.correct_answer]["fact"]
             st.markdown(
                 f"""
-                <div style="background-color: #fff3cd; border: 2px solid white; border-radius: 6px; padding: 10px; margin: 5px 0;">
-                    <h4 style="color: #856404; margin: 0 0 5px 0; font-size: 14px;">💡 Did you know?</h4>
-                    <p style="color: #333; margin: 0; font-size: 13px;"><strong>{st.session_state.correct_answer}:</strong> {fact}</p>
+                <div style="background-color: #fff3cd; border: 1px solid white; border-radius: 3px; padding: 3px; margin: 1px 0;">
+                    <h4 style="color: #856404; margin: 0 0 1px 0; font-size: 10px;">💡 Did you know?</h4>
+                    <p style="color: #333; margin: 0; font-size: 10px;"><strong>{st.session_state.correct_answer}:</strong> {fact}</p>
                 </div>
                 """,
                 unsafe_allow_html=True
