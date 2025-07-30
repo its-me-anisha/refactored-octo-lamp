@@ -994,20 +994,20 @@ def set_background():
                 .user-choice {{
                     background-color: #e3f2fd;
                     border: 1px solid #2196f3;
-                    border-radius: 3px;
-                    padding: 2px;
-                    margin: 1px 0;
+                    border-radius: 0px;
+                    padding: 0px;
+                    margin: 0px 0;
                     text-align: center;
                     font-weight: bold;
                     color: #1976d2;
-                    font-size: 11px;
+                    font-size: 10px;
                 }}
                 .stButton > button {{
                     width: 100%;
                     margin: 0px 0;
-                    padding: 3px 6px;
-                    font-size: 11px;
-                    min-height: 25px;
+                    padding: 2px 4px;
+                    font-size: 10px;
+                    min-height: 20px;
                 }}
                 @media (max-width: 768px) {{
                     .content-container, .score-container, .flag-container, .options-container, .result-container {{
@@ -1056,19 +1056,19 @@ def set_background():
                     }}
                 }}
                 h1 {{
-                    font-size: 14px !important;
-                    margin: 1px 0 !important;
-                }}
-                h2 {{
                     font-size: 12px !important;
                     margin: 0px 0 !important;
                 }}
-                h3 {{
+                h2 {{
                     font-size: 10px !important;
                     margin: 0px 0 !important;
                 }}
+                h3 {{
+                    font-size: 8px !important;
+                    margin: 0px 0 !important;
+                }}
                 p {{
-                    font-size: 10px !important;
+                    font-size: 8px !important;
                     margin: 0px 0 !important;
                 }}
                 </style>
@@ -1090,206 +1090,97 @@ def set_background():
                             .stApp > div {
                 overflow: hidden !important;
             }
-            body {
-                overflow: hidden !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                position: fixed !important;
-                width: 100% !important;
-                height: 100% !important;
-            }
-            html {
-                overflow: hidden !important;
-                position: fixed !important;
-            }
-            .stApp {
-                position: fixed !important;
-                top: 0 !important;
-                left: 0 !important;
-                width: 100% !important;
-                height: 100% !important;
-                overflow: hidden !important;
-            }
-            .main .block-container {
-                position: fixed !important;
-                top: 0 !important;
-                left: 0 !important;
-                width: 100% !important;
-                height: 100% !important;
-                overflow: hidden !important;
-                padding: 0 !important;
-                margin: 0 !important;
-            }
-            * {
-                scroll-behavior: none !important;
-                scrollbar-width: none !important;
-                -ms-overflow-style: none !important;
-                scroll-snap-type: none !important;
-            }
-            *::-webkit-scrollbar {
-                display: none !important;
-            }
-            .stButton > button:focus {
-                outline: none !important;
-                box-shadow: none !important;
-            }
-            .stButton > button:active {
-                transform: none !important;
-            }
-            .stButton > button:hover {
-                transform: none !important;
-            }
-            .stApp {
-                scroll-snap-type: none !important;
-                scroll-behavior: none !important;
-            }
-                            .main .block-container {
-                    scroll-snap-type: none !important;
-                    scroll-behavior: none !important;
-                }
-                <script>
-                // Prevent all scrolling
-                document.addEventListener('DOMContentLoaded', function() {
-                    // Prevent scroll on window
-                    window.addEventListener('scroll', function(e) {
-                        e.preventDefault();
-                        window.scrollTo(0, 0);
-                    }, { passive: false });
-                    
-                    // Prevent scroll on body
-                    document.body.addEventListener('scroll', function(e) {
-                        e.preventDefault();
-                        document.body.scrollTop = 0;
-                    }, { passive: false });
-                    
-                    // Prevent scroll on html
-                    document.documentElement.addEventListener('scroll', function(e) {
-                        e.preventDefault();
-                        document.documentElement.scrollTop = 0;
-                    }, { passive: false });
-                    
-                    // Lock scroll position
-                    window.scrollTo(0, 0);
-                    document.body.scrollTop = 0;
-                    document.documentElement.scrollTop = 0;
-                });
-                </script>
-                body {
+                            body {
                     overflow: hidden !important;
                     margin: 0 !important;
                     padding: 0 !important;
-                    position: fixed !important;
-                    width: 100% !important;
-                    height: 100% !important;
                 }
                 html {
                     overflow: hidden !important;
-                    position: fixed !important;
                 }
                 .stApp {
-                    position: fixed !important;
-                    top: 0 !important;
-                    left: 0 !important;
-                    width: 100% !important;
-                    height: 100% !important;
                     overflow: hidden !important;
                 }
                 .main .block-container {
-                    position: fixed !important;
-                    top: 0 !important;
-                    left: 0 !important;
-                    width: 100% !important;
-                    height: 100% !important;
                     overflow: hidden !important;
                     padding: 0 !important;
                     margin: 0 !important;
                 }
-                * {
-                    scroll-behavior: none !important;
-                    scrollbar-width: none !important;
-                    -ms-overflow-style: none !important;
-                    scroll-snap-type: none !important;
-                }
-                *::-webkit-scrollbar {
-                    display: none !important;
-                }
-                .stButton > button:focus {
-                    outline: none !important;
-                    box-shadow: none !important;
-                }
-                .stButton > button:active {
-                    transform: none !important;
-                }
-                .stButton > button:hover {
-                    transform: none !important;
-                }
-                .stApp {
-                    scroll-snap-type: none !important;
-                    scroll-behavior: none !important;
-                }
-                .main .block-container {
-                    scroll-snap-type: none !important;
-                    scroll-behavior: none !important;
-                }
-                            .content-container {
-                background-color: white;
-                padding: 2px;
-                border-radius: 3px;
-                margin: 0px 0;
-                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-                max-width: 75vw;
-                width: 100%;
-                margin-left: auto;
-                margin-right: auto;
+                            body {
+                overflow: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
             }
-            .score-container {
-                background-color: white;
-                padding: 2px;
-                border-radius: 3px;
-                margin: 0px 0;
-                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-                max-width: 75vw;
-                width: 100%;
-                margin-left: auto;
-                margin-right: auto;
+            html {
+                overflow: hidden !important;
             }
-            .score-container h3 {
-                color: #000000 !important;
+            .stApp {
+                overflow: hidden !important;
             }
-            .flag-container {
-                background-color: white;
-                padding: 2px;
-                border-radius: 3px;
-                margin: 0px 0;
-                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-                max-width: 75vw;
-                width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-                text-align: center;
+            .main .block-container {
+                overflow: hidden !important;
+                padding: 0 !important;
+                margin: 0 !important;
             }
-            .options-container {
-                background-color: white;
-                padding: 2px;
-                border-radius: 3px;
-                margin: 0px 0;
-                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-                max-width: 75vw;
-                width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .result-container {
-                background-color: white;
-                padding: 2px;
-                border-radius: 3px;
-                margin: 0px 0;
-                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-                max-width: 75vw;
-                width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
+                                            .content-container {
+                    background-color: white;
+                    padding: 0px;
+                    border-radius: 0px;
+                    margin: 0px 0;
+                    box-shadow: none;
+                    max-width: 100vw;
+                    width: 100%;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                .score-container {
+                    background-color: white;
+                    padding: 0px;
+                    border-radius: 0px;
+                    margin: 0px 0;
+                    box-shadow: none;
+                    max-width: 100vw;
+                    width: 100%;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                .score-container h3 {
+                    color: #000000 !important;
+                }
+                .flag-container {
+                    background-color: white;
+                    padding: 0px;
+                    border-radius: 0px;
+                    margin: 0px 0;
+                    box-shadow: none;
+                    max-width: 100vw;
+                    width: 100%;
+                    margin-left: 0;
+                    margin-right: 0;
+                    text-align: center;
+                }
+                .options-container {
+                    background-color: white;
+                    padding: 0px;
+                    border-radius: 0px;
+                    margin: 0px 0;
+                    box-shadow: none;
+                    max-width: 100vw;
+                    width: 100%;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                .result-container {
+                    background-color: white;
+                    padding: 0px;
+                    border-radius: 0px;
+                    margin: 0px 0;
+                    box-shadow: none;
+                    max-width: 100vw;
+                    width: 100%;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
                             .user-choice {
                 background-color: #e3f2fd;
                 border: 1px solid #2196f3;
@@ -1471,8 +1362,8 @@ def main():
     st.set_page_config(
         page_title="Country Flag Guessing Game",
         page_icon="🏳️",
-        layout="wide",
-        initial_sidebar_state="expanded"
+        layout="centered",
+        initial_sidebar_state="collapsed"
     )
     
     set_background()
@@ -1525,7 +1416,6 @@ def main():
             }
             .stButton > button:hover {
                 background-color: #45a049 !important;
-                transform: none !important;
             }
             </style>
             """,
@@ -1669,7 +1559,7 @@ def main():
     if st.session_state.total_questions > 0:
         progress = st.session_state.total_questions / 10
         st.progress(progress)
-        st.markdown(f"**Question {st.session_state.total_questions}/10**")
+        st.caption(f"Question {st.session_state.total_questions}/10")
     
     # Main game area
     if st.session_state.current_flag is None or st.button("🎯 Guess the Country Flag", key="new_game"):
@@ -1701,35 +1591,16 @@ def main():
         )
         
         # Display flag image
-        st.markdown(
-            """
-            <div class="flag-container">
-            """,
-            unsafe_allow_html=True
-        )
-        
         try:
             flag_url = get_flag_image_url(st.session_state.correct_answer)
-            # Center the flag and make it bigger
-            col1, col2, col3 = st.columns([1, 3, 1])
-            with col2:
-                st.image(flag_url, width=200)
+            st.image(flag_url, width=150)
         except:
             # Fallback to emoji
             st.markdown(f"**Flag:** {st.session_state.current_flag}")
             st.markdown(f"**Flag Emoji:** {st.session_state.current_flag}")
         
-        st.markdown("</div>", unsafe_allow_html=True)
-        
         # Display hint button and options
         if not st.session_state.show_result:
-            st.markdown(
-                """
-                <div class="options-container">
-                """,
-                unsafe_allow_html=True
-            )
-            
             # Hint button
             if st.button("💡 Hint", key="hint_button"):
                 st.session_state.show_hint = True
@@ -1738,15 +1609,7 @@ def main():
             # Show hint if requested
             if st.session_state.show_hint:
                 hint_text = get_hint(st.session_state.correct_answer)
-                st.markdown(
-                    f"""
-                    <div style="background-color: #d1ecf1; border: 1px solid white; border-radius: 3px; padding: 3px; margin: 1px 0;">
-                        <h4 style="color: #0c5460; margin: 0 0 1px 0; font-size: 10px;">💡 Hint</h4>
-                        <p style="color: #333; margin: 0; font-size: 10px;">{hint_text}</p>
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
+                st.info(f"💡 Hint: {hint_text}")
             
             # Display options
             for i, option in enumerate(st.session_state.options):
@@ -1757,8 +1620,6 @@ def main():
                     if option == st.session_state.correct_answer:
                         st.session_state.score += 1
                     st.rerun()
-            
-            st.markdown("</div>", unsafe_allow_html=True)
         
         # Show result
         if st.session_state.show_result and st.session_state.user_answer:
