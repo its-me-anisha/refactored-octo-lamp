@@ -1094,17 +1094,142 @@ def set_background():
                 overflow: hidden !important;
                 margin: 0 !important;
                 padding: 0 !important;
+                position: fixed !important;
+                width: 100% !important;
+                height: 100% !important;
             }
             html {
                 overflow: hidden !important;
+                position: fixed !important;
             }
+            .stApp {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                overflow: hidden !important;
+            }
+            .main .block-container {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                overflow: hidden !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            * {
+                scroll-behavior: none !important;
+                scrollbar-width: none !important;
+                -ms-overflow-style: none !important;
+                scroll-snap-type: none !important;
+            }
+            *::-webkit-scrollbar {
+                display: none !important;
+            }
+            .stButton > button:focus {
+                outline: none !important;
+                box-shadow: none !important;
+            }
+            .stButton > button:active {
+                transform: none !important;
+            }
+            .stButton > button:hover {
+                transform: none !important;
+            }
+            .stApp {
+                scroll-snap-type: none !important;
+                scroll-behavior: none !important;
+            }
+                            .main .block-container {
+                    scroll-snap-type: none !important;
+                    scroll-behavior: none !important;
+                }
+                <script>
+                // Prevent all scrolling
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Prevent scroll on window
+                    window.addEventListener('scroll', function(e) {
+                        e.preventDefault();
+                        window.scrollTo(0, 0);
+                    }, { passive: false });
+                    
+                    // Prevent scroll on body
+                    document.body.addEventListener('scroll', function(e) {
+                        e.preventDefault();
+                        document.body.scrollTop = 0;
+                    }, { passive: false });
+                    
+                    // Prevent scroll on html
+                    document.documentElement.addEventListener('scroll', function(e) {
+                        e.preventDefault();
+                        document.documentElement.scrollTop = 0;
+                    }, { passive: false });
+                    
+                    // Lock scroll position
+                    window.scrollTo(0, 0);
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                });
+                </script>
                 body {
                     overflow: hidden !important;
                     margin: 0 !important;
                     padding: 0 !important;
+                    position: fixed !important;
+                    width: 100% !important;
+                    height: 100% !important;
                 }
                 html {
                     overflow: hidden !important;
+                    position: fixed !important;
+                }
+                .stApp {
+                    position: fixed !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    width: 100% !important;
+                    height: 100% !important;
+                    overflow: hidden !important;
+                }
+                .main .block-container {
+                    position: fixed !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    width: 100% !important;
+                    height: 100% !important;
+                    overflow: hidden !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                }
+                * {
+                    scroll-behavior: none !important;
+                    scrollbar-width: none !important;
+                    -ms-overflow-style: none !important;
+                    scroll-snap-type: none !important;
+                }
+                *::-webkit-scrollbar {
+                    display: none !important;
+                }
+                .stButton > button:focus {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+                .stButton > button:active {
+                    transform: none !important;
+                }
+                .stButton > button:hover {
+                    transform: none !important;
+                }
+                .stApp {
+                    scroll-snap-type: none !important;
+                    scroll-behavior: none !important;
+                }
+                .main .block-container {
+                    scroll-snap-type: none !important;
+                    scroll-behavior: none !important;
                 }
                             .content-container {
                 background-color: white;
@@ -1400,7 +1525,7 @@ def main():
             }
             .stButton > button:hover {
                 background-color: #45a049 !important;
-                transform: scale(1.02) !important;
+                transform: none !important;
             }
             </style>
             """,
