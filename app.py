@@ -309,7 +309,7 @@ COUNTRIES_DATA = {
         "flag": "🇮🇸",
         "fact": "Iceland has no mosquitoes and is powered almost entirely by renewable energy."
     },
-    "India": {
+    "India:)": {
         "flag": "🇮🇳",
         "fact": "India is the world's largest democracy and home to over 1.3 billion people."
     },
@@ -934,10 +934,136 @@ def set_background():
                 }}
                 .content-container {{
                     background-color: white;
-                    padding: 20px;
-                    border-radius: 10px;
-                    margin: 10px 0;
-                    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+                    padding: 15px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    max-width: 90vw;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }}
+                .score-container {{
+                    background-color: white;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    max-width: 90vw;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }}
+                .flag-container {{
+                    background-color: white;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    max-width: 90vw;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                }}
+                .options-container {{
+                    background-color: white;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    max-width: 90vw;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }}
+                .result-container {{
+                    background-color: white;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    max-width: 90vw;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }}
+                .user-choice {{
+                    background-color: #e3f2fd;
+                    border: 2px solid #2196f3;
+                    border-radius: 6px;
+                    padding: 8px;
+                    margin: 5px 0;
+                    text-align: center;
+                    font-weight: bold;
+                    color: #1976d2;
+                }}
+                .stButton > button {{
+                    width: 100%;
+                    margin: 2px 0;
+                    padding: 8px 16px;
+                    font-size: 14px;
+                    min-height: 40px;
+                }}
+                @media (max-width: 768px) {{
+                    .content-container, .score-container, .flag-container, .options-container, .result-container {{
+                        max-width: 95vw;
+                        padding: 8px;
+                    }}
+                    h1 {{
+                        font-size: 20px !important;
+                    }}
+                    h2 {{
+                        font-size: 18px !important;
+                    }}
+                    h3 {{
+                        font-size: 14px !important;
+                    }}
+                    p {{
+                        font-size: 12px !important;
+                    }}
+                    .stButton > button {{
+                        font-size: 12px;
+                        padding: 6px 12px;
+                    }}
+                }}
+                @media (max-width: 480px) {{
+                    .content-container, .score-container, .flag-container, .options-container, .result-container {{
+                        max-width: 98vw;
+                        padding: 5px;
+                    }}
+                    h1 {{
+                        font-size: 18px !important;
+                    }}
+                    h2 {{
+                        font-size: 16px !important;
+                    }}
+                    h3 {{
+                        font-size: 12px !important;
+                    }}
+                    p {{
+                        font-size: 11px !important;
+                    }}
+                    .stButton > button {{
+                        font-size: 11px;
+                        padding: 4px 8px;
+                    }}
+                }}
+                h1 {{
+                    font-size: 24px !important;
+                    margin: 10px 0 !important;
+                }}
+                h2 {{
+                    font-size: 20px !important;
+                    margin: 8px 0 !important;
+                }}
+                h3 {{
+                    font-size: 16px !important;
+                    margin: 6px 0 !important;
+                }}
+                p {{
+                    font-size: 14px !important;
+                    margin: 5px 0 !important;
                 }}
                 </style>
                 """,
@@ -953,10 +1079,136 @@ def set_background():
                 }
                 .content-container {
                     background-color: white;
-                    padding: 20px;
-                    border-radius: 10px;
-                    margin: 10px 0;
-                    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+                    padding: 15px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    max-width: 90vw;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .score-container {
+                    background-color: white;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    max-width: 90vw;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .flag-container {
+                    background-color: white;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    max-width: 90vw;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                }
+                .options-container {
+                    background-color: white;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    max-width: 90vw;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .result-container {
+                    background-color: white;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    max-width: 90vw;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .user-choice {
+                    background-color: #e3f2fd;
+                    border: 2px solid #2196f3;
+                    border-radius: 6px;
+                    padding: 8px;
+                    margin: 5px 0;
+                    text-align: center;
+                    font-weight: bold;
+                    color: #1976d2;
+                }
+                .stButton > button {
+                    width: 100%;
+                    margin: 2px 0;
+                    padding: 8px 16px;
+                    font-size: 14px;
+                    min-height: 40px;
+                }
+                @media (max-width: 768px) {
+                    .content-container, .score-container, .flag-container, .options-container, .result-container {
+                        max-width: 95vw;
+                        padding: 8px;
+                    }
+                    h1 {
+                        font-size: 20px !important;
+                    }
+                    h2 {
+                        font-size: 18px !important;
+                    }
+                    h3 {
+                        font-size: 14px !important;
+                    }
+                    p {
+                        font-size: 12px !important;
+                    }
+                    .stButton > button {
+                        font-size: 12px;
+                        padding: 6px 12px;
+                    }
+                }
+                @media (max-width: 480px) {
+                    .content-container, .score-container, .flag-container, .options-container, .result-container {
+                        max-width: 98vw;
+                        padding: 5px;
+                    }
+                    h1 {
+                        font-size: 18px !important;
+                    }
+                    h2 {
+                        font-size: 16px !important;
+                    }
+                    h3 {
+                        font-size: 12px !important;
+                    }
+                    p {
+                        font-size: 11px !important;
+                    }
+                    .stButton > button {
+                        font-size: 11px;
+                        padding: 4px 8px;
+                    }
+                }
+                h1 {
+                    font-size: 24px !important;
+                    margin: 10px 0 !important;
+                }
+                h2 {
+                    font-size: 20px !important;
+                    margin: 8px 0 !important;
+                }
+                h3 {
+                    font-size: 16px !important;
+                    margin: 6px 0 !important;
+                }
+                p {
+                    font-size: 14px !important;
+                    margin: 5px 0 !important;
                 }
                 </style>
                 """,
@@ -972,10 +1224,76 @@ def set_background():
             }
             .content-container {
                 background-color: white;
-                padding: 20px;
-                border-radius: 10px;
-                margin: 10px 0;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+                padding: 15px;
+                border-radius: 8px;
+                margin: 5px 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .score-container {
+                background-color: white;
+                padding: 10px;
+                border-radius: 8px;
+                margin: 5px 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .flag-container {
+                background-color: white;
+                padding: 10px;
+                border-radius: 8px;
+                margin: 5px 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            .options-container {
+                background-color: white;
+                padding: 10px;
+                border-radius: 8px;
+                margin: 5px 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .result-container {
+                background-color: white;
+                padding: 10px;
+                border-radius: 8px;
+                margin: 5px 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .stButton > button {
+                width: 100%;
+                margin: 2px 0;
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 24px !important;
+                margin: 10px 0 !important;
+            }
+            h2 {
+                font-size: 20px !important;
+                margin: 8px 0 !important;
+            }
+            h3 {
+                font-size: 16px !important;
+                margin: 6px 0 !important;
+            }
+            p {
+                font-size: 14px !important;
+                margin: 5px 0 !important;
             }
             </style>
             """,
@@ -1023,7 +1341,7 @@ def main():
     # Score display
     st.markdown(
         f"""
-        <div class="content-container">
+        <div class="score-container">
             <div style="display: flex; justify-content: space-around; text-align: center;">
                 <div>
                     <h3>Score</h3>
@@ -1075,14 +1393,15 @@ def main():
         # Display flag image
         st.markdown(
             """
-            <div class="content-container" style="text-align: center;">
+            <div class="flag-container">
             """,
             unsafe_allow_html=True
         )
         
         try:
             flag_url = get_flag_image_url(st.session_state.correct_answer)
-            st.image(flag_url, width=300)
+            # Use responsive image sizing
+            st.image(flag_url, use_column_width=True)
         except:
             # Fallback to emoji
             st.markdown(f"**Flag:** {st.session_state.current_flag}")
@@ -1094,7 +1413,7 @@ def main():
         if not st.session_state.show_result:
             st.markdown(
                 """
-                <div class="content-container">
+                <div class="options-container">
                 """,
                 unsafe_allow_html=True
             )
@@ -1109,9 +1428,9 @@ def main():
                 hint_text = get_hint(st.session_state.correct_answer)
                 st.markdown(
                     f"""
-                    <div style="background-color: #d1ecf1; border: 3px solid white; border-radius: 10px; padding: 15px; margin: 10px 0;">
-                        <h4 style="color: #0c5460; margin: 0 0 10px 0;">💡 Hint</h4>
-                        <p style="color: #333; margin: 0;">{hint_text}</p>
+                    <div style="background-color: #d1ecf1; border: 2px solid white; border-radius: 6px; padding: 10px; margin: 5px 0;">
+                        <h4 style="color: #0c5460; margin: 0 0 5px 0; font-size: 14px;">💡 Hint</h4>
+                        <p style="color: #333; margin: 0; font-size: 13px;">{hint_text}</p>
                     </div>
                     """,
                     unsafe_allow_html=True
@@ -1133,7 +1452,17 @@ def main():
         if st.session_state.show_result and st.session_state.user_answer:
             st.markdown(
                 """
-                <div class="content-container">
+                <div class="result-container">
+                """,
+                unsafe_allow_html=True
+            )
+            
+            # Show user's choice
+            st.markdown(
+                f"""
+                <div class="user-choice">
+                    <p style="margin: 0; font-size: 14px;">You chose: <strong>{st.session_state.user_answer}</strong></p>
+                </div>
                 """,
                 unsafe_allow_html=True
             )
@@ -1141,8 +1470,8 @@ def main():
             if st.session_state.user_answer == st.session_state.correct_answer:
                 st.markdown(
                     """
-                    <div style="background-color: #d4edda; border: 3px solid white; border-radius: 10px; padding: 15px; margin: 10px 0; text-align: center;">
-                        <h3 style="color: #155724; margin: 0;">🎉 Correct! Well done!</h3>
+                    <div style="background-color: #d4edda; border: 2px solid white; border-radius: 6px; padding: 10px; margin: 5px 0; text-align: center;">
+                        <h3 style="color: #155724; margin: 0; font-size: 16px;">🎉 Correct! Well done!</h3>
                     </div>
                     """,
                     unsafe_allow_html=True
@@ -1150,8 +1479,8 @@ def main():
             else:
                 st.markdown(
                     f"""
-                    <div style="background-color: #f8d7da; border: 3px solid white; border-radius: 10px; padding: 15px; margin: 10px 0; text-align: center;">
-                        <h3 style="color: #721c24; margin: 0;">❌ Wrong! The correct answer is: <strong>{st.session_state.correct_answer}</strong></h3>
+                    <div style="background-color: #f8d7da; border: 2px solid white; border-radius: 6px; padding: 10px; margin: 5px 0; text-align: center;">
+                        <h3 style="color: #721c24; margin: 0; font-size: 16px;">❌ Wrong! The correct answer is: <strong>{st.session_state.correct_answer}</strong></h3>
                     </div>
                     """,
                     unsafe_allow_html=True
@@ -1161,9 +1490,9 @@ def main():
             fact = COUNTRIES_DATA[st.session_state.correct_answer]["fact"]
             st.markdown(
                 f"""
-                <div style="background-color: #fff3cd; border: 3px solid white; border-radius: 10px; padding: 15px; margin: 10px 0;">
-                    <h4 style="color: #856404; margin: 0 0 10px 0;">💡 Did you know?</h4>
-                    <p style="color: #333; margin: 0;"><strong>{st.session_state.correct_answer}:</strong> {fact}</p>
+                <div style="background-color: #fff3cd; border: 2px solid white; border-radius: 6px; padding: 10px; margin: 5px 0;">
+                    <h4 style="color: #856404; margin: 0 0 5px 0; font-size: 14px;">💡 Did you know?</h4>
+                    <p style="color: #333; margin: 0; font-size: 13px;"><strong>{st.session_state.correct_answer}:</strong> {fact}</p>
                 </div>
                 """,
                 unsafe_allow_html=True
