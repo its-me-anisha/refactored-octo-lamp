@@ -916,11 +916,31 @@ def set_background():
             st.markdown(
                 f"""
                 <style>
+                /* Global 110% zoom effect */
+                html {{
+                    zoom: 120% !important;
+                    -webkit-transform: scale(1.2) !important;
+                    -webkit-transform-origin: 0 0 !important;
+                    transform: scale(1.2) !important;
+                    transform-origin: 0 0 !important;
+                }}
+                body {{
+                    zoom: 120% !important;
+                    -webkit-transform: scale(1.2) !important;
+                    -webkit-transform-origin: 0 0 !important;
+                    transform: scale(1.2) !important;
+                    transform-origin: 0 0 !important;
+                }}
                 .stApp {{
                     background-image: url("data:image/png;base64,{background_image}");
                     background-size: cover;
                     background-repeat: no-repeat;
                     background-attachment: fixed;
+                    zoom: 120% !important;
+                    -webkit-transform: scale(1.2) !important;
+                    -webkit-transform-origin: 0 0 !important;
+                    transform: scale(1.2) !important;
+                    transform-origin: 0 0 !important;
                 }}
                 .stApp::before {{
                     content: '';
@@ -991,86 +1011,10 @@ def set_background():
                     margin-left: auto;
                     margin-right: auto;
                 }}
-                .user-choice {{
-                    background-color: #e3f2fd;
-                    border: 1px solid #2196f3;
-                    border-radius: 0px;
-                    padding: 0px;
-                    margin: 0px 0;
-                    text-align: center;
-                    font-weight: bold;
-                    color: #1976d2;
-                    font-size: 10px;
-                }}
-                .stButton > button {{
-                    width: 100%;
-                    margin: 0px 0;
-                    padding: 2px 4px;
-                    font-size: 10px;
-                    min-height: 20px;
-                }}
-                @media (max-width: 768px) {{
-                    .content-container, .score-container, .flag-container, .options-container, .result-container {{
-                        max-width: 92vw;
-                        padding: 4px;
-                    }}
-                    h1 {{
-                        font-size: 18px !important;
-                    }}
-                    h2 {{
-                        font-size: 16px !important;
-                    }}
-                    h3 {{
-                        font-size: 12px !important;
-                    }}
-                    p {{
-                        font-size: 11px !important;
-                    }}
-                    .stButton > button {{
-                        font-size: 11px;
-                        padding: 4px 8px;
-                        min-height: 30px;
-                    }}
-                }}
-                @media (max-width: 480px) {{
-                    .content-container, .score-container, .flag-container, .options-container, .result-container {{
-                        max-width: 96vw;
-                        padding: 3px;
-                    }}
-                    h1 {{
-                        font-size: 16px !important;
-                    }}
-                    h2 {{
-                        font-size: 14px !important;
-                    }}
-                    h3 {{
-                        font-size: 10px !important;
-                    }}
-                    p {{
-                        font-size: 10px !important;
-                    }}
-                    .stButton > button {{
-                        font-size: 10px;
-                        padding: 3px 6px;
-                        min-height: 28px;
-                    }}
-                }}
-                h1 {{
-                    font-size: 12px !important;
-                    margin: 0px 0 !important;
-                }}
-                h2 {{
-                    font-size: 10px !important;
-                    margin: 0px 0 !important;
-                }}
-                h3 {{
-                    font-size: 8px !important;
-                    margin: 0px 0 !important;
-                }}
-                p {{
-                    font-size: 8px !important;
-                    margin: 0px 0 !important;
-                }}
+
+
+
+
                 </style>
                 """,
                 unsafe_allow_html=True
@@ -1080,9 +1024,29 @@ def set_background():
             st.markdown(
                 """
                 <style>
+                /* Global 120% zoom effect */
+                html {
+                    zoom: 120% !important;
+                    -webkit-transform: scale(1.2) !important;
+                    -webkit-transform-origin: 0 0 !important;
+                    transform: scale(1.2) !important;
+                    transform-origin: 0 0 !important;
+                }
+                body {
+                    zoom: 120% !important;
+                    -webkit-transform: scale(1.2) !important;
+                    -webkit-transform-origin: 0 0 !important;
+                    transform: scale(1.2) !important;
+                    transform-origin: 0 0 !important;
+                }
                 .stApp {
                     background: #000000 !important;
                     overflow: hidden !important;
+                    zoom: 120% !important;
+                    -webkit-transform: scale(1.2) !important;
+                    -webkit-transform-origin: 0 0 !important;
+                    transform: scale(1.2) !important;
+                    transform-origin: 0 0 !important;
                 }
                 .main .block-container {
                     overflow: hidden !important;
@@ -1124,62 +1088,62 @@ def set_background():
             }
                                             .content-container {
                     background-color: white;
-                    padding: 0px;
-                    border-radius: 0px;
-                    margin: 0px 0;
-                    box-shadow: none;
-                    max-width: 100vw;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    max-width: 90vw;
                     width: 100%;
-                    margin-left: 0;
-                    margin-right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
                 .score-container {
                     background-color: white;
-                    padding: 0px;
-                    border-radius: 0px;
-                    margin: 0px 0;
-                    box-shadow: none;
-                    max-width: 100vw;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    max-width: 90vw;
                     width: 100%;
-                    margin-left: 0;
-                    margin-right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
                 .score-container h3 {
                     color: #000000 !important;
                 }
                 .flag-container {
                     background-color: white;
-                    padding: 0px;
-                    border-radius: 0px;
-                    margin: 0px 0;
-                    box-shadow: none;
-                    max-width: 100vw;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    max-width: 90vw;
                     width: 100%;
-                    margin-left: 0;
-                    margin-right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
                     text-align: center;
                 }
                 .options-container {
                     background-color: white;
-                    padding: 0px;
-                    border-radius: 0px;
-                    margin: 0px 0;
-                    box-shadow: none;
-                    max-width: 100vw;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    max-width: 90vw;
                     width: 100%;
-                    margin-left: 0;
-                    margin-right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
                 .result-container {
                     background-color: white;
-                    padding: 0px;
-                    border-radius: 0px;
-                    margin: 0px 0;
-                    box-shadow: none;
-                    max-width: 100vw;
+                    padding: 10px;
+                    border-radius: 8px;
+                    margin: 5px 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    max-width: 90vw;
                     width: 100%;
-                    margin-left: 0;
-                    margin-right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
                             .user-choice {
                 background-color: #e3f2fd;
@@ -1190,13 +1154,13 @@ def set_background():
                 text-align: center;
                 font-weight: bold;
                 color: #1976d2;
-                font-size: 11px;
+                font-size: 20px;
             }
             .stButton > button {
                 width: 100%;
                 margin: 0px 0;
                 padding: 4px 8px;
-                font-size: 12px;
+                font-size: 20px;
                 min-height: 30px;
             }
                             @media (max-width: 768px) {
@@ -1205,21 +1169,42 @@ def set_background():
                     padding: 4px;
                 }
                 h1 {
-                    font-size: 18px !important;
+                    font-size: 40px !important;
+                    color: #ff0000 !important;
                 }
                 h2 {
-                    font-size: 16px !important;
+                    font-size: 36px !important;
+                    color: #ff0000 !important;
                 }
                 h3 {
-                    font-size: 12px !important;
+                    font-size: 32px !important;
+                    color: #ff0000 !important;
                 }
                 p {
-                    font-size: 11px !important;
+                    font-size: 28px !important;
+                    color: #ff0000 !important;
                 }
                 .stButton > button {
-                    font-size: 11px;
+                    font-size: 24px;
                     padding: 4px 8px;
                     min-height: 30px;
+                    color: #ff0000 !important;
+                }
+                .stMarkdown h1 {
+                    font-size: 40px !important;
+                    color: #ff0000 !important;
+                }
+                .stMarkdown h2 {
+                    font-size: 36px !important;
+                    color: #ff0000 !important;
+                }
+                .stMarkdown h3 {
+                    font-size: 32px !important;
+                    color: #ff0000 !important;
+                }
+                .stMarkdown p {
+                    font-size: 28px !important;
+                    color: #ff0000 !important;
                 }
             }
             @media (max-width: 480px) {
@@ -1228,38 +1213,85 @@ def set_background():
                     padding: 3px;
                 }
                 h1 {
-                    font-size: 16px !important;
+                    font-size: 36px !important;
+                    color: #ff0000 !important;
                 }
                 h2 {
-                    font-size: 14px !important;
+                    font-size: 32px !important;
+                    color: #ff0000 !important;
                 }
                 h3 {
-                    font-size: 10px !important;
+                    font-size: 28px !important;
+                    color: #ff0000 !important;
                 }
                 p {
-                    font-size: 10px !important;
+                    font-size: 24px !important;
+                    color: #ff0000 !important;
                 }
                 .stButton > button {
-                    font-size: 10px;
+                    font-size: 20px;
                     padding: 3px 6px;
                     min-height: 28px;
+                    color: #ff0000 !important;
+                }
+                .stMarkdown h1 {
+                    font-size: 36px !important;
+                    color: #ff0000 !important;
+                }
+                .stMarkdown h2 {
+                    font-size: 32px !important;
+                    color: #ff0000 !important;
+                }
+                .stMarkdown h3 {
+                    font-size: 28px !important;
+                    color: #ff0000 !important;
+                }
+                .stMarkdown p {
+                    font-size: 24px !important;
+                    color: #ff0000 !important;
                 }
             }
                 h1 {
-                    font-size: 24px !important;
+                    font-size: 48px !important;
                     margin: 10px 0 !important;
+                    color: #ff0000 !important;
+                    background-color: #ffff00 !important;
+                    padding: 10px !important;
                 }
                 h2 {
-                    font-size: 20px !important;
+                    font-size: 40px !important;
                     margin: 8px 0 !important;
+                    color: #ff0000 !important;
                 }
                 h3 {
-                    font-size: 16px !important;
+                    font-size: 36px !important;
                     margin: 6px 0 !important;
+                    color: #ff0000 !important;
                 }
                 p {
-                    font-size: 14px !important;
+                    font-size: 32px !important;
                     margin: 5px 0 !important;
+                    color: #ff0000 !important;
+                }
+                .stMarkdown {
+                    font-size: 32px !important;
+                }
+                .stMarkdown h1 {
+                    font-size: 48px !important;
+                    color: #ff0000 !important;
+                    background-color: #ffff00 !important;
+                }
+                .stMarkdown h2 {
+                    font-size: 40px !important;
+                    color: #ff0000 !important;
+                }
+                .stMarkdown h3 {
+                    font-size: 36px !important;
+                    color: #ff0000 !important;
+                }
+                .stMarkdown p {
+                    font-size: 32px !important;
+                    color: #ff0000 !important;
                 }
                 </style>
                 """,
@@ -1270,9 +1302,29 @@ def set_background():
         st.markdown(
             """
             <style>
+            /* Global 120% zoom effect */
+            html {
+                zoom: 120% !important;
+                -webkit-transform: scale(1.2) !important;
+                -webkit-transform-origin: 0 0 !important;
+                transform: scale(1.2) !important;
+                transform-origin: 0 0 !important;
+            }
+            body {
+                zoom: 120% !important;
+                -webkit-transform: scale(1.2) !important;
+                -webkit-transform-origin: 0 0 !important;
+                transform: scale(1.2) !important;
+                transform-origin: 0 0 !important;
+            }
             .stApp {
                 background: #000000 !important;
                 overflow: hidden !important;
+                zoom: 120% !important;
+                -webkit-transform: scale(1.2) !important;
+                -webkit-transform-origin: 0 0 !important;
+                transform: scale(1.2) !important;
+                transform-origin: 0 0 !important;
             }
             .main .block-container {
                 overflow: hidden !important;
@@ -1335,22 +1387,22 @@ def set_background():
                 width: 100%;
                 margin: 2px 0;
                 padding: 8px 16px;
-                font-size: 14px;
+                font-size: 20px;
             }
             h1 {
-                font-size: 16px !important;
+                font-size: 32px !important;
                 margin: 2px 0 !important;
             }
             h2 {
-                font-size: 14px !important;
+                font-size: 28px !important;
                 margin: 1px 0 !important;
             }
             h3 {
-                font-size: 12px !important;
+                font-size: 24px !important;
                 margin: 1px 0 !important;
             }
             p {
-                font-size: 11px !important;
+                font-size: 20px !important;
                 margin: 1px 0 !important;
             }
             </style>
@@ -1362,7 +1414,7 @@ def main():
     st.set_page_config(
         page_title="Country Flag Guessing Game",
         page_icon="🏳️",
-        layout="centered",
+        layout="wide",
         initial_sidebar_state="collapsed"
     )
     
@@ -1394,7 +1446,7 @@ def main():
             """
             <div class="content-container">
                 <h1 style="text-align: center; color: #333;">🏳️ Country Flag Guessing Game 🏳️</h1>
-                <p style="text-align: center; color: #666; font-size: 18px;"><strong>Test your knowledge of world flags!</strong></p>
+                <p style="text-align: center; color: #666; font-size: 28px;"><strong>Test your knowledge of world flags!</strong></p>
             </div>
             """,
             unsafe_allow_html=True
@@ -1427,6 +1479,8 @@ def main():
             if st.button("🚀 START GAME", key="start_game", use_container_width=True):
                 st.session_state.game_started = True
                 st.rerun()
+        
+
         
         return  # Stop here if game hasn't started
     
@@ -1467,65 +1521,13 @@ def main():
             unsafe_allow_html=True
         )
         
-        # Show confetti and celebration for good scores
+        # Show celebration for good scores
         if final_score >= 6:
             st.markdown(
                 """
                 <div style="text-align: center; margin: 10px 0;">
                     <h2 style="color: #ff6b6b;">🎊 Congratulations! 🎊</h2>
                     <h3 style="color: #4ecdc4;">You're a Flag Master! 🌟</h3>
-                    
-                    <div style="text-align: center; margin: 15px 0;">
-                        <div style="display: inline-block; animation: bounce 1s infinite;">
-                            <span style="font-size: 30px;">🎉</span>
-                        </div>
-                        <div style="display: inline-block; animation: bounce 1s infinite 0.2s;">
-                            <span style="font-size: 30px;">🎊</span>
-                        </div>
-                        <div style="display: inline-block; animation: bounce 1s infinite 0.4s;">
-                            <span style="font-size: 30px;">🏳️</span>
-                        </div>
-                        <div style="display: inline-block; animation: bounce 1s infinite 0.6s;">
-                            <span style="font-size: 30px;">🚩</span>
-                        </div>
-                        <div style="display: inline-block; animation: bounce 1s infinite 0.8s;">
-                            <span style="font-size: 30px;">🎈</span>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: center; margin: 10px 0;">
-                        <div style="display: inline-block; animation: spin 2s linear infinite;">
-                            <span style="font-size: 25px;">🏁</span>
-                        </div>
-                        <div style="display: inline-block; animation: spin 2s linear infinite reverse;">
-                            <span style="font-size: 25px;">🎌</span>
-                        </div>
-                        <div style="display: inline-block; animation: spin 2s linear infinite;">
-                            <span style="font-size: 25px;">🎋</span>
-                        </div>
-                    </div>
-                    
-                    <style>
-                    @keyframes bounce {
-                        0%, 20%, 50%, 80%, 100% {
-                            transform: translateY(0);
-                        }
-                        40% {
-                            transform: translateY(-10px);
-                        }
-                        60% {
-                            transform: translateY(-5px);
-                        }
-                    }
-                    @keyframes spin {
-                        from {
-                            transform: rotate(0deg);
-                        }
-                        to {
-                            transform: rotate(360deg);
-                        }
-                    }
-                    </style>
                 </div>
                 """,
                 unsafe_allow_html=True
@@ -1593,7 +1595,10 @@ def main():
         # Display flag image
         try:
             flag_url = get_flag_image_url(st.session_state.correct_answer)
-            st.image(flag_url, width=150)
+            # Responsive image sizing
+            col1, col2, col3 = st.columns([1, 2, 1])
+            with col2:
+                st.image(flag_url, use_column_width=True)
         except:
             # Fallback to emoji
             st.markdown(f"**Flag:** {st.session_state.current_flag}")
@@ -1623,60 +1628,22 @@ def main():
         
         # Show result
         if st.session_state.show_result and st.session_state.user_answer:
-            st.markdown(
-                """
-                <div class="result-container">
-                """,
-                unsafe_allow_html=True
-            )
-            
             # Show user's choice
-            st.markdown(
-                f"""
-                <div class="user-choice">
-                    <p style="margin: 0; font-size: 14px;">You chose: <strong>{st.session_state.user_answer}</strong></p>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+            st.caption(f"You chose: {st.session_state.user_answer}")
             
             if st.session_state.user_answer == st.session_state.correct_answer:
-                st.markdown(
-                    """
-                    <div style="background-color: #d4edda; border: 1px solid white; border-radius: 3px; padding: 3px; margin: 1px 0; text-align: center;">
-                        <h3 style="color: #155724; margin: 0; font-size: 12px;">🎉 Correct! Well done!</h3>
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
+                st.success("🎉 Correct! Well done!")
             else:
-                st.markdown(
-                    f"""
-                    <div style="background-color: #f8d7da; border: 1px solid white; border-radius: 3px; padding: 3px; margin: 1px 0; text-align: center;">
-                        <h3 style="color: #721c24; margin: 0; font-size: 12px;">❌ Wrong! The correct answer is: <strong>{st.session_state.correct_answer}</strong></h3>
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
+                st.error(f"❌ Wrong! The correct answer is: {st.session_state.correct_answer}")
             
             # Show fact
             fact = COUNTRIES_DATA[st.session_state.correct_answer]["fact"]
-            st.markdown(
-                f"""
-                <div style="background-color: #fff3cd; border: 1px solid white; border-radius: 3px; padding: 3px; margin: 1px 0;">
-                    <h4 style="color: #856404; margin: 0 0 1px 0; font-size: 10px;">💡 Did you know?</h4>
-                    <p style="color: #333; margin: 0; font-size: 10px;"><strong>{st.session_state.correct_answer}:</strong> {fact}</p>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+            st.info(f"💡 Did you know? {st.session_state.correct_answer}: {fact}")
             
             # Next question button
             if st.button("🔄 Next Question"):
                 st.session_state.current_flag = None
                 st.rerun()
-            
-            st.markdown("</div>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main() 
