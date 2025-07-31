@@ -917,30 +917,11 @@ def set_background():
                 f"""
                 <style>
                 /* Global 110% zoom effect */
-                html {{
-                    zoom: 120% !important;
-                    -webkit-transform: scale(1.2) !important;
-                    -webkit-transform-origin: 0 0 !important;
-                    transform: scale(1.2) !important;
-                    transform-origin: 0 0 !important;
-                }}
-                body {{
-                    zoom: 120% !important;
-                    -webkit-transform: scale(1.2) !important;
-                    -webkit-transform-origin: 0 0 !important;
-                    transform: scale(1.2) !important;
-                    transform-origin: 0 0 !important;
-                }}
                 .stApp {{
                     background-image: url("data:image/png;base64,{background_image}");
                     background-size: cover;
                     background-repeat: no-repeat;
                     background-attachment: fixed;
-                    zoom: 120% !important;
-                    -webkit-transform: scale(1.2) !important;
-                    -webkit-transform-origin: 0 0 !important;
-                    transform: scale(1.2) !important;
-                    transform-origin: 0 0 !important;
                 }}
                 .stApp::before {{
                     content: '';
@@ -1024,29 +1005,9 @@ def set_background():
             st.markdown(
                 """
                 <style>
-                /* Global 120% zoom effect */
-                html {
-                    zoom: 120% !important;
-                    -webkit-transform: scale(1.2) !important;
-                    -webkit-transform-origin: 0 0 !important;
-                    transform: scale(1.2) !important;
-                    transform-origin: 0 0 !important;
-                }
-                body {
-                    zoom: 120% !important;
-                    -webkit-transform: scale(1.2) !important;
-                    -webkit-transform-origin: 0 0 !important;
-                    transform: scale(1.2) !important;
-                    transform-origin: 0 0 !important;
-                }
                 .stApp {
                     background: #000000 !important;
                     overflow: hidden !important;
-                    zoom: 120% !important;
-                    -webkit-transform: scale(1.2) !important;
-                    -webkit-transform-origin: 0 0 !important;
-                    transform: scale(1.2) !important;
-                    transform-origin: 0 0 !important;
                 }
                 .main .block-container {
                     overflow: hidden !important;
@@ -1302,29 +1263,9 @@ def set_background():
         st.markdown(
             """
             <style>
-            /* Global 120% zoom effect */
-            html {
-                zoom: 120% !important;
-                -webkit-transform: scale(1.2) !important;
-                -webkit-transform-origin: 0 0 !important;
-                transform: scale(1.2) !important;
-                transform-origin: 0 0 !important;
-            }
-            body {
-                zoom: 120% !important;
-                -webkit-transform: scale(1.2) !important;
-                -webkit-transform-origin: 0 0 !important;
-                transform: scale(1.2) !important;
-                transform-origin: 0 0 !important;
-            }
             .stApp {
                 background: #000000 !important;
                 overflow: hidden !important;
-                zoom: 120% !important;
-                -webkit-transform: scale(1.2) !important;
-                -webkit-transform-origin: 0 0 !important;
-                transform: scale(1.2) !important;
-                transform-origin: 0 0 !important;
             }
             .main .block-container {
                 overflow: hidden !important;
